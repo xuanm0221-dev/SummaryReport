@@ -7,11 +7,11 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif; font-size: 9px; color: #333; background: #f7fafc; line-height: 1.3; }
-    .nav-bar { position: sticky; top: 0; z-index: 100; background: #1a365d; padding: 6px 12px; display: flex; align-items: center; gap: 6px; max-width: 210mm; margin: 0 auto; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .nav-bar { position: sticky; top: 0; z-index: 100; background: #1a365d; padding: 6px 12px; display: flex; align-items: center; gap: 6px; max-width: 240mm; margin: 0 auto; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
     .nav-brand { color: white; font-weight: bold; font-size: 10px; margin-right: 8px; }
     .nav-bar a { color:white;text-decoration:none;padding:3px 7px;border-radius:3px;font-size:7.5px;background:rgba(255,255,255,0.15); }
     .nav-bar a:hover { background:rgba(255,255,255,0.3); }
-    .wrap { max-width: 210mm; margin: 0 auto; background: #fff; padding: 12mm 11mm 18mm 11mm; min-height: 100vh; box-shadow: 0 0 20px rgba(0,0,0,0.08); }
+    .wrap { max-width: 240mm; margin: 0 auto; background: #fff; padding: 12mm 11mm 18mm 11mm; min-height: 100vh; box-shadow: 0 0 20px rgba(0,0,0,0.08); }
     .header { border-bottom: 2.5px solid #1a365d; padding-bottom: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: flex-end; }
     .header-left h1 { font-size: 15px; color: #1a365d; letter-spacing: -0.3px; }
     .header-left p { font-size: 7.5px; color: #666; margin-top: 2px; }
@@ -119,7 +119,7 @@
         <div style="display:flex;justify-content:space-between;font-size:7px;">
           <span style="color:#000;font-weight:600;">3월 점당</span><span style="color:#1a365d;font-weight:700;">502K · 901점</span>
         </div>
-        <div style="display:flex;justify-content:space-between;font-size:7px;">
+        <div style="display:flex;justify-content:space-between;font-size:7px;background:#edf2f7;padding:2px 4px;border-radius:3px;">
           <span style="color:#000;font-weight:600;">4월 월환산 (4/13)</span><span style="color:#2f855a;font-weight:800;">105.4%</span>
         </div>
       </div>
@@ -140,7 +140,7 @@
           <span style="color:#000;font-weight:600;">OFF 대리상</span><span style="color:#1a365d;font-weight:700;">108% · YTD 120%</span>
         </div>
         <div style="display:flex;justify-content:space-between;font-size:7px;">
-          <span style="color:#000;font-weight:600;">EC 합계</span><span style="color:#1a365d;font-weight:700;">113% · YTD 118%</span>
+          <span style="color:#000;font-weight:600;">EC 대리상</span><span style="color:#1a365d;font-weight:700;">79% · YTD 83%</span>
         </div>
       </div>
     </div>
@@ -157,13 +157,16 @@
       </div>
       <div style="border-top:1px solid #e2e8f0;margin-top:7px;padding-top:6px;display:flex;flex-direction:column;gap:3px;">
         <div style="display:flex;justify-content:space-between;font-size:7px;">
-          <span style="color:#000;font-weight:600;">EC 합계</span><span style="color:#1a365d;font-weight:700;">20.3% <span style="color:#c53030;font-weight:700;">(+2.0%p)</span></span>
+          <span style="color:#000;font-weight:600;">온라인</span><span style="color:#1a365d;font-weight:700;">20.3% <span style="color:#c53030;font-weight:700;">(+2.0%p)</span> <span style="color:#2f855a;font-weight:700;">(YTD -0.6%p)</span></span>
         </div>
         <div style="display:flex;justify-content:space-between;font-size:7px;">
-          <span style="color:#000;font-weight:600;">OFF 합계</span><span style="color:#1a365d;font-weight:700;">20.0% <span style="color:#2f855a;font-weight:700;">(-4.0%p)</span></span>
+          <span style="color:#000;font-weight:600;">오프라인</span><span style="color:#1a365d;font-weight:700;">20.0% <span style="color:#2f855a;font-weight:700;">(-4.0%p)</span> <span style="color:#2f855a;font-weight:700;">(YTD -2.7%p)</span></span>
         </div>
         <div style="display:flex;justify-content:space-between;font-size:7px;">
-          <span style="color:#000;font-weight:600;">OFF 대리상</span><span style="color:#1a365d;font-weight:700;">9.4% <span style="color:#2f855a;font-weight:700;">(-1.0%p)</span></span>
+          <span style="color:#000;font-weight:600;">대리상(EC)</span><span style="color:#1a365d;font-weight:700;">13.6% <span style="color:#c53030;font-weight:700;">(+3.6%p)</span> <span style="color:#c53030;font-weight:700;">(YTD +2.6%p)</span></span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:7px;">
+          <span style="color:#000;font-weight:600;">대리상(OFF)</span><span style="color:#1a365d;font-weight:700;">9.4% <span style="color:#2f855a;font-weight:700;">(-1.0%p)</span> <span style="color:#2f855a;font-weight:700;">(YTD -0.4%p)</span></span>
         </div>
       </div>
     </div>
@@ -196,7 +199,7 @@
   <!-- 4월 서브 KPI (4/13 기준) — 심플 버전 -->
   <div style="display:flex;align-items:center;gap:0;background:#f7fafc;border:1px solid #e2e8f0;border-radius:5px;padding:6px 10px;margin-bottom:8px;overflow:hidden;">
     <div style="display:flex;align-items:center;gap:5px;padding-right:10px;border-right:1px solid #cbd5e0;">
-      <span style="font-size:7.5px;font-weight:700;color:#4a5568;">📅 4/13 기준 · MLB 리테일</span>
+      <span style="font-size:7.5px;font-weight:700;color:#4a5568;">📅 4/13 기준 · MLB 리테일(누적)</span>
     </div>
     <div style="display:flex;flex:1;justify-content:space-around;gap:4px;">
       <div style="display:flex;flex-direction:column;align-items:center;">
@@ -233,16 +236,17 @@
       <div style="flex:1;">
         <div style="font-size:7.5px;font-weight:bold;color:#90cdf4;margin-bottom:3px;">📊 1Q 종합 평가</div>
         <div style="font-size:7px;line-height:1.6;">
-          수익성 중심의 질적 성장은 <b>영업이익률 YTD 9.7%(+3.9%p), 영업이익 173%</b>로 강하게 달성.
-          그러나 2월 춘절 특수(193%)가 1Q YTD를 견인했을 뿐, 기저 제거 시 1월(82%)·3월(97%) 실수요는 전년 이하.
-          EC대리상 3개월 연속 역성장(YTD 83%), ACC 재고 V자 악화(신발 58주·기타 82주), 베이징 지역 침체가 Q2 최대 경보 신호.
-          4월 반등(MLB 104.4%, 점당 105.4%)은 긍정적이나 구조적 이슈 해소 전까지 볼륨 성장 지속 여부는 불투명.
+          ① <b>수익성 질적 성장:</b> 영업이익률 YTD 9.7%(+3.9%p) · 영업이익 173% 강하게 달성<br>
+          ② <b>출고 안정:</b> 126%→108%→102% 월별 고른 성장<br>
+          ③ <b>EC대리상 출고 YTD 83%(출고 기준):</b> 수요 부진 아닌 대리상 재고 통제에 따른 발주 축소 · 리테일은 107%로 정상<br>
+          ④ <b>ACC 재고 악화:</b> 신발 58주 · 기타 82주 — Q2 최대 경보<br>
+          ⑤ <b>4월 반등 신호(리테일 기준):</b> MLB 104.4%, 점당 105.4% — 구조적 이슈 해소 전까지 지속성 불투명
         </div>
       </div>
       <div style="flex:1;">
         <div style="font-size:7.5px;font-weight:bold;color:#90cdf4;margin-bottom:3px;">🚀 Q2 핵심 과제 (4~6월)</div>
         <div style="font-size:7px;line-height:1.6;">
-          ① <b>EC대리상 회복:</b> 3개월 연속 YTD 83% — 4월 내 채널 이탈 원인 규명 및 회복 플랜 확정<br>
+          ① <b>EC대리상 출고 정상화:</b> YTD 83%는 대리상 재고 통제에 따른 발주 축소 — 재고 소진 지원 및 발주 회복 플랜 수립<br>
           ② <b>신발 재고 소진:</b> 58주 → 40주 이하 목표, 4~5월 집중 프로모션 실행<br>
           ③ <b>여름 비수기 대응:</b> 6~8월 리테일 YoY 성장 유지를 위한 모자·26SS 의류 캠페인 선제 기획<br>
           ④ <b>OFF직영 적자 해소:</b> 아울렛·쇼핑몰 고정비 구조 재검토 및 매출 회복 방안 수립
