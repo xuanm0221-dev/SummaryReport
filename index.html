@@ -59,7 +59,7 @@
   <span class="nav-brand">⚾ MLB China</span>
   <a href="#sec1">1.Executive Summary</a>
   <a href="#sec2">2.채널분석</a>
-  <a href="#sec3">3.상품/할인율/재고</a>
+  <a href="#sec3">3.재고/매출 연동</a>
   <a href="#sec4">4.대리상/점당</a>
   <a href="#sec5">5.손익</a>
   <a href="#sec6">6.영업비/전략</a>
@@ -363,7 +363,7 @@
           <tr style="background:#fffaf0;"><td colspan="3" style="font-weight:bold;color:#7b341e;font-size:7.5px;padding:3px 5px;">🛒 채널</td></tr>
           <tr><td><b>EC대리상 출고</b></td>
             <td style="font-size:7px;">78% → 95% → 79% (YTD 83%)</td>
-            <td><span class="badge-down">구조적 이탈</span></td>
+            <td><span class="badge-warn">대리상 재고통제</span></td>
           </tr>
           <tr><td><b>EC 틱톡/JD 리테일</b></td>
             <td style="font-size:7px;">163% → 138% → 168% (YTD 158%)</td>
@@ -408,31 +408,34 @@
   <!-- ==================== SECTION 2 ==================== -->
   <div class="page-title" id="sec2">2. 채널별 상세 분석 (3월 당월 / YTD)</div>
 
-  <!-- ⚠️ 채널 핵심 이슈 (TOP) -->
-  <div class="box box-red" style="margin-bottom:8px;">
-    <div class="box-title red">⚠️ 채널 핵심 이슈 (당월 3월 · 1Q YTD)</div>
-
-    <!-- 구조적 이탈 -->
-    <div style="font-size:7px;font-weight:bold;color:#c53030;margin:3px 0 2px;border-bottom:1px solid #fed7d7;padding-bottom:1px;">🔴 구조적 이탈 — 당월 · YTD 동반 부진</div>
-    <ul style="margin-bottom:4px;">
-      <li><b>EC대리상 출고:</b> 당월 <b style="color:#c53030;">79%</b> · YTD <b style="color:#c53030;">83%</b> — 3개월 연속 역성장(78%→95%→79%), 리테일은 107%인데 출고만 역성장 → 대리상 자체 매입 축소 · 타 채널 이탈 가능성 · 할인율 YTD +2.6%p 구조적 상승 병행</li>
-      <li><b>OFF플래그쉽:</b> 당월 리테일 <b style="color:#c53030;">81%</b> · 출고 <b style="color:#c53030;">81%</b> · YTD 리테일 <b style="color:#c53030;">90%</b> — 1월 70%·2월 143%(춘절)·3월 81%, 춘절 제외 시 실질 역성장 지속 · 브랜드 허브 기능 약화 우려</li>
-    </ul>
-
-    <!-- 당월 부진, YTD 기저 주의 -->
-    <div style="font-size:7px;font-weight:bold;color:#975a16;margin:3px 0 2px;border-bottom:1px solid #fefcbf;padding-bottom:1px;">🟠 당월 부진</div>
-    <ul style="margin-bottom:4px;">
-      <li><b>OFF직영 3채널:</b> 당월 아울렛 <b style="color:#c53030;">73%</b>·쇼핑몰 93%·플래그쉽 81% 역성장 · YTD 아울렛 104%·쇼핑몰 110%는 2월 춘절(199%)이 견인한 수치 — 직접이익 3채널 전부 적자(아울렛 -8.6%/-33.4%p, 쇼핑몰 -9.7%, 플래그쉽 -35.0%), 임차료 74%·43.7% 고정비 구조 미개선</li>
-      <li><b>OFF대리상 리테일:</b> 당월 <b style="color:#dd6b20;">95%</b> · YTD 113% — YTD 수치는 2월 212% 춘절 특수 효과, 1월 77%·3월 95% 기저 제거 시 실질 역성장 반복</li>
-      <li><b>EC합계 직영 수익성:</b> 리테일 당월 113%·YTD 118% 성장에도 직접이익률 <b style="color:#c53030;">-7.0%p 급락</b> — TP+광고 수수료 급증이 매출 성장 잠식 · EC할인몰 직접이익률 9.1%(-15.6%p) 특히 위험</li>
-    </ul>
-
-    <!-- 구조 전환 -->
-    <div style="font-size:7px;font-weight:bold;color:#2b6cb0;margin:3px 0 2px;border-bottom:1px solid #bee3f8;padding-bottom:1px;">🔵 구조 전환 시그널 — 대응 필요</div>
-    <ul>
-      <li><b>EC 티몰 vs 틱톡/JD 역전 가속:</b> 티몰 당월 <b style="color:#dd6b20;">98%</b>(YTD 107%) vs 틱톡/JD <b style="color:#276749;">168%</b>(YTD 158%) — 1~3월 티몰 점유율 지속 하락, 신플랫폼으로 소비자 이동 가속 · 티몰 전략 재점검 필요</li>
-      <li><b>EC대리상 리테일↑ vs 출고↓ 괴리:</b> 리테일 YTD 107% 성장에도 출고 YTD 83% — 기존 재고 소진으로 버티는 구조, Q2 재고 고갈 시 리테일도 급락 가능성</li>
-    </ul>
+  <!-- ⚠️ 채널 핵심 이슈 — 좌(당월 부진) / 우상(당월·YTD 부진) / 우하(구조 전환) -->
+  <div class="container" style="margin-bottom:8px;">
+    <div class="left">
+      <div class="box" style="background:#fffaf0;border-color:#fbd38d;">
+        <div class="box-title" style="color:#975a16;">🟠 당월 현황</div>
+        <ul>
+          <li><b>OFF직영 3채널:</b> 당월 아울렛 <b style="color:#c53030;">73%</b>·쇼핑몰 93%·플래그쉽 81% 역성장 · YTD 아울렛 104%·쇼핑몰 110%는 2월 춘절(199%)이 견인한 수치 — 직접이익 3채널 전부 적자(아울렛 -8.6%/-33.4%p, 쇼핑몰 -9.7%, 플래그쉽 -35.0%), 임차료 74%·43.7% 고정비 구조 개선 필요</li>
+          <li><b>OFF대리상 리테일:</b> 당월 <b style="color:#dd6b20;">95%</b> · YTD 113% — YTD 수치는 2월 212% 춘절 특수 효과, 1월 77%·3월 95% 기저 제거 시 실질 역성장 반복</li>
+          <li><b>EC직영 수익성 (티몰·틱톡/JD):</b>
+            <b>EC티몰</b> 당월 98%·YTD 107% 성장세 둔화 + 직접이익률 18.9%(-6.6%p) 하락 — 핵심 채널 TP+광고 수수료 증가로 수익성 다소 약화 ·
+            <b>EC틱톡/JD</b> 당월 168%·YTD 158% 고성장 + 직접이익 +1,000K, 단 직접이익률 19.8%(-1.4%p) 소폭 조정 — 신채널 안착, 비용 효율 점검 필요</li>
+        </ul>
+      </div>
+    </div>
+    <div class="right">
+      <div class="box box-red">
+        <div class="box-title red">🔴 당월 · YTD 현황</div>
+        <ul>
+          <li><b>EC대리상 출고:</b> 당월 <b style="color:#c53030;">79%</b> · YTD <b style="color:#c53030;">83%</b> — 리테일 107% 성장 중 출고만 역성장(78%→95%→79%) → 대리상의 <b>재고 통제 의도</b>로 해석 (재고 누적 시 향후 입고 거부 우려 → 선제적 매입 축소) · 다만 할인율 YTD +2.6%p 구조적 상승은 별도 모니터링 필요</li>
+        </ul>
+      </div>
+      <div class="box" style="margin-top:6px;background:#ebf8ff;border-color:#90cdf4;">
+        <div class="box-title" style="color:#2b6cb0;">🔵 구조 전환 시그널 — 대응 필요</div>
+        <ul>
+          <li><b>EC 티몰·틱톡/JD 동반 성장:</b> 티몰 당월 <b style="color:#276749;">98%</b>(YTD <b style="color:#276749;">107%</b>) · 틱톡/JD 당월 <b style="color:#276749;">168%</b>(YTD <b style="color:#276749;">158%</b>) — 신채널(틱톡/JD) 빠른 성장 + 기존채널(티몰) YoY 성장 유지 = <b>잠식 없는 동반 확장</b> 시그널 · 점유율은 자연스러운 재편</li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <div class="container">
@@ -744,77 +747,76 @@
   <hr class="divider">
 
   <!-- ==================== SECTION 3 ==================== -->
-  <div class="page-title" id="sec3">3. 재고 분석</div>
+  <div class="page-title" id="sec3">3. 재고 / 매출 연동 분석</div>
 
   <div class="container">
     <div class="left">
   <div class="section" style="margin-bottom:8px;">
-    <div class="section-title">🎯 브랜드별 연간 판매 추정 (기존계획 기준 · 긍정/부정 ±5%p)</div>
+    <div class="section-title">🎯 브랜드별 연간 판매 추정</div>
     <div style="display:grid;grid-template-columns:1fr;gap:6px;">
 
       <!-- MLB -->
-      <div style="border:1px solid #cbd5e0;border-radius:4px;padding:6px;background:#f7fafc;">
+      <div style="border:1px solid #cbd5e0;border-radius:4px;padding:6px;background:#fff;">
         <!-- 시뮬레이션 입력 헤더 -->
-        <div style="background:#fffaf0;border:1px solid #f6ad55;border-radius:3px;padding:4px 6px;margin-bottom:6px;display:flex;align-items:center;gap:8px;font-size:7.5px;">
-          <b style="color:#1a365d;">⚾ MLB 리테일 성장율 :</b>
-          <span>대리상 <input type="number" value="105" min="95" max="115" style="width:36px;font-weight:bold;color:#2b6cb0;border:1px solid #cbd5e0;border-radius:2px;text-align:center;padding:1px;font-size:8px;" /> %</span>
+        <div style="background:#f7fafc;border:1px solid #cbd5e0;border-radius:3px;padding:4px 6px;margin-bottom:6px;display:flex;align-items:center;gap:8px;font-size:7.5px;">
+          <b style="color:#2d3748;">⚾ MLB 리테일 성장율 :</b>
+          <span>대리상 <input type="number" value="105" min="95" max="115" style="width:36px;font-weight:bold;color:#2d3748;border:1px solid #cbd5e0;border-radius:2px;text-align:center;padding:1px;font-size:8px;" /> %</span>
           <span style="color:#a0aec0;">|</span>
-          <span>본사 <input type="number" value="115" min="105" max="125" style="width:36px;font-weight:bold;color:#2b6cb0;border:1px solid #cbd5e0;border-radius:2px;text-align:center;padding:1px;font-size:8px;" /> %</span>
-          <span style="color:#718096;font-size:6.5px;margin-left:auto;">(긍정/부정 기존대비 ±5%)</span>
+          <span>본사 <input type="number" value="115" min="105" max="125" style="width:36px;font-weight:bold;color:#2d3748;border:1px solid #cbd5e0;border-radius:2px;text-align:center;padding:1px;font-size:8px;" /> %</span>
         </div>
 
         <!-- 대리상 판매추정 -->
-        <div style="font-size:7.5px;font-weight:bold;color:#1a365d;margin-bottom:3px;">🏬 MLB 대리상 판매추정 <span style="font-weight:normal;font-size:6.5px;color:#4a5568;">[재고주수: 신발 30주, 모자 20주, 가방 25.5주]</span></div>
+        <div style="font-size:7.5px;font-weight:bold;color:#2d3748;margin-bottom:3px;">🏬 MLB 대리상 판매추정 <span style="font-weight:normal;font-size:6.5px;color:#718096;">[재고주수: 신발 30주, 모자 20주, 가방 25.5주]</span></div>
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-bottom:4px;">
           <table style="font-size:7px;">
-            <tr><th style="background:#2b6cb0;color:#fff;">합계</th><th class="num" style="background:#2b6cb0;color:#fff;">금액</th></tr>
-            <tr><td>리테일(연간)</td><td class="num"><span class="badge-up">106.9%</span></td></tr>
-            <tr><td>매입합계</td><td class="num"><span class="badge-warn">95.6%</span></td></tr>
-            <tr><td>재고증감</td><td class="num" style="color:#c53030;font-weight:bold;">+131M</td></tr>
+            <tr><th style="background:#edf2f7;color:#2d3748;">합계</th><th class="num" style="background:#edf2f7;color:#2d3748;">금액</th></tr>
+            <tr><td>리테일(연간)</td><td class="num">106.9%</td></tr>
+            <tr><td>매입합계</td><td class="num">95.6%</td></tr>
+            <tr><td>재고증감</td><td class="num" style="font-weight:bold;">+131M</td></tr>
           </table>
           <table style="font-size:7px;">
-            <tr><th style="background:#2b6cb0;color:#fff;">의류</th><th class="num" style="background:#2b6cb0;color:#fff;">금액</th></tr>
-            <tr><td>의류판매</td><td class="num"><span class="badge-up">106.7%</span></td></tr>
-            <tr><td>OTB</td><td class="num"><span class="badge-up">107.6%</span></td></tr>
-            <tr><td>의류재고</td><td class="num" style="color:#c53030;font-weight:bold;">+586M</td></tr>
+            <tr><th style="background:#edf2f7;color:#2d3748;">의류</th><th class="num" style="background:#edf2f7;color:#2d3748;">금액</th></tr>
+            <tr><td>의류판매</td><td class="num">106.7%</td></tr>
+            <tr><td>OTB</td><td class="num">107.6%</td></tr>
+            <tr><td>의류재고</td><td class="num" style="font-weight:bold;">+586M</td></tr>
           </table>
           <table style="font-size:7px;">
-            <tr><th style="background:#2b6cb0;color:#fff;">ACC</th><th class="num" style="background:#2b6cb0;color:#fff;">금액</th></tr>
-            <tr><td>ACC판매</td><td class="num"><span class="badge-up">107.2%</span></td></tr>
-            <tr><td>ACC입고</td><td class="num"><span class="badge-down">80.9%</span></td></tr>
-            <tr><td>ACC재고</td><td class="num" style="color:#2f855a;font-weight:bold;">-455M</td></tr>
+            <tr><th style="background:#edf2f7;color:#2d3748;">ACC</th><th class="num" style="background:#edf2f7;color:#2d3748;">금액</th></tr>
+            <tr><td>ACC판매</td><td class="num">107.2%</td></tr>
+            <tr><td>ACC입고</td><td class="num">80.9%</td></tr>
+            <tr><td>ACC재고</td><td class="num" style="font-weight:bold;">-455M</td></tr>
           </table>
         </div>
-        <div style="font-size:6.5px;color:#4a5568;margin-bottom:8px;padding-left:2px;">OTB: 당년F <b style="color:#c53030;">96.6%</b> | 당년S <b style="color:#2f855a;">110.0%</b> <span style="color:#718096;">(당년S 전년 Sell-in 미포함)</span></div>
+        <div style="font-size:6.5px;color:#4a5568;margin-bottom:8px;padding-left:2px;">OTB: 당년F <b>96.6%</b> | 당년S <b>110.0%</b> <span style="color:#718096;">(당년S 전년 Sell-in 미포함)</span></div>
 
         <!-- 직영 판매추정 -->
-        <div style="font-size:7.5px;font-weight:bold;color:#1a365d;margin-bottom:3px;">🏢 MLB 직영 판매추정 <span style="font-weight:normal;font-size:6.5px;color:#4a5568;">[재고주수: 신발 10주, 모자 8주, 가방 10주]</span></div>
+        <div style="font-size:7.5px;font-weight:bold;color:#2d3748;margin-bottom:3px;">🏢 MLB 직영 판매추정 <span style="font-weight:normal;font-size:6.5px;color:#718096;">[재고주수: 신발 10주, 모자 8주, 가방 10주]</span></div>
         <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;margin-bottom:4px;">
           <table style="font-size:7px;">
-            <tr><th style="background:#2b6cb0;color:#fff;">합계</th><th class="num" style="background:#2b6cb0;color:#fff;">금액</th></tr>
-            <tr><td>대리상출고</td><td class="num"><span class="badge-warn">95.6%</span></td></tr>
-            <tr><td>직영판매</td><td class="num"><span class="badge-up">113.6%</span></td></tr>
-            <tr><td>출고합계 YoY</td><td class="num"><span class="badge-warn">98.0%</span></td></tr>
-            <tr><td>재고증감</td><td class="num" style="color:#2f855a;font-weight:bold;">-1,226M</td></tr>
+            <tr><th style="background:#edf2f7;color:#2d3748;">합계</th><th class="num" style="background:#edf2f7;color:#2d3748;">금액</th></tr>
+            <tr><td>대리상출고</td><td class="num">95.6%</td></tr>
+            <tr><td>직영판매</td><td class="num">113.6%</td></tr>
+            <tr><td>출고합계 YoY</td><td class="num">98.0%</td></tr>
+            <tr><td>재고증감</td><td class="num" style="font-weight:bold;">-1,226M</td></tr>
             <tr><td>상품매입</td><td class="num" style="font-weight:bold;">9,183M</td></tr>
           </table>
           <table style="font-size:7px;">
-            <tr><th style="background:#2b6cb0;color:#fff;">의류</th><th class="num" style="background:#2b6cb0;color:#fff;">금액</th></tr>
-            <tr><td>의류판매</td><td class="num"><span class="badge-up">108.4%</span></td></tr>
-            <tr><td>의류재고</td><td class="num" style="color:#2f855a;font-weight:bold;">-348M</td></tr>
+            <tr><th style="background:#edf2f7;color:#2d3748;">의류</th><th class="num" style="background:#edf2f7;color:#2d3748;">금액</th></tr>
+            <tr><td>의류판매</td><td class="num">108.4%</td></tr>
+            <tr><td>의류재고</td><td class="num" style="font-weight:bold;">-348M</td></tr>
             <tr><td>의류매입</td><td class="num" style="font-weight:bold;">5,944M</td></tr>
-            <tr><td style="padding-left:8px;color:#4a5568;">26SS</td><td class="num">2,189M</td></tr>
-            <tr><td style="padding-left:8px;color:#4a5568;">26FW</td><td class="num">3,001M</td></tr>
-            <tr><td style="padding-left:8px;color:#4a5568;">27SS</td><td class="num">754M</td></tr>
+            <tr><td style="padding-left:8px;color:#718096;">26SS</td><td class="num">2,189M</td></tr>
+            <tr><td style="padding-left:8px;color:#718096;">26FW</td><td class="num">3,001M</td></tr>
+            <tr><td style="padding-left:8px;color:#718096;">27SS</td><td class="num">754M</td></tr>
           </table>
           <table style="font-size:7px;">
-            <tr><th style="background:#2b6cb0;color:#fff;">ACC</th><th class="num" style="background:#2b6cb0;color:#fff;">금액</th></tr>
-            <tr><td>ACC판매</td><td class="num"><span class="badge-down">85.4%</span></td></tr>
-            <tr><td>ACC재고</td><td class="num" style="color:#2f855a;font-weight:bold;">-878M</td></tr>
+            <tr><th style="background:#edf2f7;color:#2d3748;">ACC</th><th class="num" style="background:#edf2f7;color:#2d3748;">금액</th></tr>
+            <tr><td>ACC판매</td><td class="num">85.4%</td></tr>
+            <tr><td>ACC재고</td><td class="num" style="font-weight:bold;">-878M</td></tr>
             <tr><td>ACC매입</td><td class="num" style="font-weight:bold;">3,239M</td></tr>
             <tr><td>입고완료(3월)</td><td class="num">1,009.77M</td></tr>
             <tr><td>발주완료(9월)</td><td class="num">1,914.28M</td></tr>
-            <tr style="background:#fefcbf;"><td style="font-weight:bold;">잔여예산</td><td class="num" style="font-weight:bold;color:#2f855a;">+904.51M</td></tr>
+            <tr><td style="font-weight:bold;">잔여예산</td><td class="num" style="font-weight:bold;">+904.51M</td></tr>
           </table>
         </div>
       </div>
@@ -822,11 +824,14 @@
 
     </div>
   </div>
+
+  <!-- ACC 재고주수 추세 (분석용 — 토글 접힘) -->
+  <div class="section" style="margin-top:6px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;font-size:7px;color:#718096;padding:2px 4px;">
+      <span>ACC 재고주수 1~3월 추세 (전체 · 대리상 · 본사) <span style="font-size:6px;color:#a0aec0;">※ 분석용 참고표</span></span>
+      <button onclick="var t=document.getElementById('acc-stock-trend'),b=document.getElementById('acc-stock-trend-btn');if(t.style.display==='none'){t.style.display='table';b.textContent='▲ 접기';}else{t.style.display='none';b.textContent='▼ 펼치기';}" id="acc-stock-trend-btn" style="font-size:6.5px;padding:1px 5px;cursor:pointer;background:#edf2f7;border:1px solid #cbd5e0;border-radius:3px;">▼ 펼치기</button>
     </div>
-    <div class="right">
-      <div class="section">
-        <div class="section-title">📦 ACC 재고주수 1~3월 추세 (전체 · 대리상 · 본사)</div>
-        <table style="font-size:7px;">
+        <table id="acc-stock-trend" style="display:none;font-size:7px;">
           <tr>
             <th>월</th>
             <th>아이템</th>
@@ -870,27 +875,7 @@
           <tr style="background:#fff5f5;"><td>가방</td><td class="num">45.8</td><td class="num">43.9</td><td class="num"><span class="badge-down">+1.9주</span></td><td class="num">37.3</td><td class="num">10.5</td></tr>
           <tr style="background:#fff5f5;"><td>기타</td><td class="num" style="color:#c53030;font-weight:bold;">81.6</td><td class="num">59.7</td><td class="num"><span class="badge-down">+21.9주</span></td><td class="num">74.5</td><td class="num">13.3</td></tr>
         </table>
-        <div style="font-size:6.5px;color:#c53030;margin-top:2px;">⚠️ 재고 재악화 (47.4→33.3→48.9주): 1월 과재고 → 2월 춘절 판매로 개선 → 3월 재급증 · 신발 58.0주·기타 81.6주 심각한 과재고</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container" style="margin-top:6px;">
-    <div class="left">
-      <div class="box box-blue">
-        <div class="box-title blue">📊 연간 판매 추정 시사점 (대리상 105% · 본사 115% 가정)</div>
-
-        <div style="font-size:7px;font-weight:bold;color:#2b6cb0;margin:2px 0 2px;">대리상 재고 전망</div>
-        <ul style="margin-bottom:4px;">
-          <li><b>ACC입고 80.9% 통제 → 대리상 ACC재고 -455M 소진 가능:</b> 신규 발주 자제로 기존 재고 소진에 집중 — 단 의류 재고 +586M 증가 예상으로 전체 재고는 +131M 증가 · 의류 OTB 당년F 96.6%(추가 발주 자제)·당년S 110.0%(여름 집중 투자) 양방향 관리 중</li>
-          <li><b>대리상 매입합계 95.6%:</b> 전반적 구매력 위축 신호 — 105% 리테일 성장 가정에도 매입은 감소, 현 재고 우선 소화 전략으로 해석 · Q2 재고 고갈 시 출고 급락 가능</li>
-        </ul>
-
-        <div style="font-size:7px;font-weight:bold;color:#2b6cb0;margin:2px 0 2px;">직영 재고 전망</div>
-        <ul>
-          <li><b>직영 연말 재고 -1,226M 대폭 감소 예상 (긍정):</b> 115% 판매 성장 + 입고 통제 조합 — 의류 -348M, ACC -878M 소진 · 단 ACC판매 85.4%로 목표 달성 여부 불확실 · 26SS 의류 매입 2,189M, 26FW 3,001M으로 하반기 물량 준비 완료</li>
-          <li><b>신발 재고가 핵심 변수:</b> 본사 신발 456%(3,545M 중 상당 비중) — 105/115% 시나리오 어느 쪽에서도 연내 신발 재고 정상화 어려움 · Q2 신발 집중 행사(4~5월) 없이는 연말에도 과재고 지속</li>
-        </ul>
+        <div style="font-size:6.5px;color:#c53030;margin-top:2px;">⚠️ 재고 재악화 (47.4→33.3→48.9주): 1월 과재고 → 2월 춘절 판매로 개선 → 3월 재급증 · 신발 58.0주 심각한 과재고</div>
       </div>
     </div>
     <div class="right">
@@ -899,8 +884,7 @@
 
         <div style="font-size:7px;font-weight:bold;color:#c53030;margin:2px 0 2px;border-bottom:1px solid #fed7d7;padding-bottom:1px;">🔴 즉각 개입 필요</div>
         <ul style="margin-bottom:4px;">
-          <li><b>신발 최악 (50.7→34.4→58.0주, 전년比 +23.5주):</b> 2월 춘절 소진이 일시적이었음 확인 — 3월 재입고로 역대 최고 재고주수 기록 · 연간 판매 추정(대리상 105%) 기준에서도 소진까지 1년 이상 소요 예상 · 4~5월 집중 프로모션 없이는 Q3까지 재고 누적</li>
-          <li><b>기타 ACC 지속 악화 (39.6→44.7→81.6주, +21.9주):</b> 유일하게 반등 없는 단방향 상승 — 소품류 수요 예측 실패 · 춘절에도 소진 안 됨 · 즉각 전 채널 행사 처분 또는 이월 계획 수립 필요</li>
+          <li><b>신발 주의 (50.7→34.4→58.0주, 전년比 +23.5주):</b> 2월 춘절 소진이 일시적이었음 확인 — 3월 재입고로 재고주수 상승 · 연간 판매 추정(대리상 105%) 기준에서도 소진까지 1년 이상 소요 예상 · 4~5월 집중 프로모션 없이는 Q3까지 재고 누적 가능</li>
         </ul>
 
         <div style="font-size:7px;font-weight:bold;color:#975a16;margin:2px 0 2px;border-bottom:1px solid #fefcbf;padding-bottom:1px;">🟠 관리 필요</div>
@@ -915,6 +899,21 @@
           <li><b>본사 재고 3,545M(194%):</b> 신발 456%·모자 210%로 위험하나 ACC입고 80.9% 통제 중 · 연간 판매 추정 기준 직영 ACC재고 -878M 소진 예상 · 잔여 발주 예산 904.51M으로 하반기 유연 대응 가능</li>
         </ul>
       </div>
+      <div class="box box-blue" style="margin-top:6px;">
+        <div class="box-title blue">📊 연간 판매 추정 시사점 (대리상 105% · 본사 115% 가정)</div>
+
+        <div style="font-size:7px;font-weight:bold;color:#2b6cb0;margin:2px 0 2px;">대리상 재고 전망</div>
+        <ul style="margin-bottom:4px;">
+          <li><b>ACC입고 80.9% 통제 → 대리상 ACC재고 -455M 소진 가능:</b> 신규 발주 자제로 기존 재고 소진에 집중 — 의류 재고 +586M 증가 예상으로 전체 재고 +131M 증가하나 <b>리테일 성장(105%)에 따른 자연 증가로 긍정 시그널</b> · 의류 OTB 당년F 96.6%(추가 발주 자제)·당년S 110.0%(여름 집중 투자) 양방향 관리 중</li>
+          <li><b>대리상 매입합계 95.6%:</b> 105% 리테일 성장 가정 + 매입은 감소 — 기존 재고 우선 소화하는 <b>효율적 재고 통제</b> 시그널 · 매출 성장과 매입 절제 동시 달성으로 회전율 개선 기대</li>
+        </ul>
+
+        <div style="font-size:7px;font-weight:bold;color:#2b6cb0;margin:2px 0 2px;">직영 재고 전망</div>
+        <ul>
+          <li><b>직영 연말 재고 -1,226M 대폭 감소 예상 (긍정):</b> 115% 판매 성장 + 입고 통제 조합 — 의류 -348M, ACC -878M 소진 · 단 ACC판매 85.4%로 목표 달성 여부 불확실 · 26SS 의류 매입 2,189M, 26FW 3,001M으로 하반기 물량 준비 완료</li>
+          <li style="background:#fff5f5;border-left:3px solid #c53030;padding:3px 6px;margin-left:-4px;list-style-position:inside;"><b style="color:#c53030;">⚠️ 신발 재고가 핵심 변수 (부정 시그널):</b> 본사 신발 456%(3,545M 중 상당 비중) — 105/115% 시나리오 어느 쪽에서도 연내 신발 재고 정상화 어려움 · Q2 신발 집중 행사(4~5월) 없이는 연말에도 과재고 지속</li>
+        </ul>
+      </div>
     </div>
   </div>
 
@@ -923,31 +922,92 @@
   <!-- ==================== SECTION 4 ==================== -->
   <div class="page-title" id="sec4">4. 대리상(OFF) 점당매출 분석</div>
 
-  <!-- 4월 실적 (4/13 기준) -->
-  <div class="section" style="margin-bottom:8px;background:#fffaf0;border:1px solid #f6ad55;border-radius:4px;padding:6px;">
-    <div style="font-weight:bold;font-size:9px;color:#7b341e;margin-bottom:4px;">📅 4월 실적 업데이트 (4/13 기준, Trade Zone · 정규매장 대리상)</div>
+  <!-- 1. 점당매출 KPI (당월 · YTD · 4월 환산 — 표 내용 통합) -->
+  <div class="kpi-grid" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="kpi-box" style="text-align:left;padding:8px;">
+      <div class="kpi-label" style="text-align:center;">당월 점당매출 (3월)</div>
+      <div class="kpi-value" style="text-align:center;font-size:13px;">502K <span style="font-size:9px;color:#c53030;font-weight:600;">YoY 98%</span></div>
+      <div style="font-size:6.5px;color:#718096;text-align:center;margin-top:2px;">전년 515K · 901개점 (전년 904)</div>
+      <div style="font-size:6.5px;color:#4a5568;margin-top:4px;border-top:1px solid #e2e8f0;padding-top:3px;">
+        · 기존점 <b>504K</b> <span style="color:#c53030;">97%</span> (849점)<br>
+        · 신규점 <b>481K</b> <span style="color:#dd6b20;">100%</span> (52점)
+      </div>
+    </div>
+    <div class="kpi-box" style="text-align:left;padding:8px;">
+      <div class="kpi-label" style="text-align:center;">YTD 누적 점당매출</div>
+      <div class="kpi-value" style="text-align:center;font-size:13px;">728K <span style="font-size:9px;color:#2f855a;font-weight:600;">YoY 116%</span></div>
+      <div style="font-size:6.5px;color:#718096;text-align:center;margin-top:2px;">전년 630K · 902개점 (전년 909)</div>
+      <div style="font-size:6.5px;color:#4a5568;margin-top:4px;border-top:1px solid #e2e8f0;padding-top:3px;">
+        · 기존점 <b>729K</b> <span style="color:#2f855a;">115%</span> (850점)<br>
+        · 신규점 <b>718K</b> <span style="color:#2f855a;">121%</span> (52점)<br>
+        · 연말예상 <b>666K</b> (진척률 21%)
+      </div>
+    </div>
+    <div class="kpi-box" style="text-align:left;padding:8px;background:#fffaf0;border:1px solid #f6ad55;">
+      <div class="kpi-label" style="text-align:center;color:#7b341e;">4월 점당매출 월환산 <span style="font-size:6px;color:#a0522d;">(4/13 기준)</span></div>
+      <div class="kpi-value" style="text-align:center;font-size:13px;color:#7b341e;">550K <span style="font-size:9px;color:#2f855a;font-weight:600;">YoY 105.4%</span></div>
+      <div style="font-size:6.5px;color:#7b341e;text-align:center;margin-top:2px;">당월 누적 259K · 매장 891개</div>
+      <div style="font-size:6.5px;color:#7b341e;margin-top:4px;border-top:1px solid #f6ad55;padding-top:3px;">
+        · 3월 역성장(98%) 탈피, Q2 모멘텀 확보<br>
+        · 의류 103.3% · ACC 105.6% 동반 회복
+      </div>
+    </div>
+  </div>
 
-    <!-- 당월누적 -->
-    <div style="font-size:7.5px;font-weight:bold;color:#1a365d;margin:4px 0 3px;">🗓️ 당월 누적 (4월 1~13일)</div>
-    <div class="kpi-grid" style="grid-template-columns:repeat(2,1fr);margin-bottom:4px;">
-      <div class="kpi-box" style="text-align:left;padding:6px 8px;">
-        <div class="kpi-label" style="text-align:center;">누적 실적 <span style="color:#38a169;">🟢</span></div>
-        <div class="kpi-value" style="text-align:center;font-size:12px;">231,066K</div>
-        <div style="font-size:6.5px;color:#2d3748;margin-top:3px;border-top:1px solid #e2e8f0;padding-top:3px;text-align:center;">
-          <b style="color:#2b6cb0;">YoY 104.4%</b> · 전년 221,407K
-          <div style="color:#4a5568;margin-top:2px;">의류 <b>166,597K (103.3%)</b> · ACC <b>142,646K (105.6%)</b></div>
+  <!-- 2. 점당매출 종합 시사점 -->
+  <div class="box box-yellow" style="margin-top:6px;">
+    <div class="box-title yellow">📋 점당매출 종합 시사점 (3월 · 1Q)</div>
+    <ul>
+      <li><b>당월 98% 역성장 → 4월 105.4% 반등 확인:</b> 정상화 구간으로 해석 타당 — YTD 116% 견조 · 4/13 반등으로 Q2 모멘텀 확보</li>
+      <li><b>F1 YTD 122% · O3 YTD 135% 집중 확대:</b> 정가 판매 비중 높은 고효율 Zone — F4 구조조정과 함께 포트폴리오 고도화 진행 중</li>
+      <li><b>F3 당월 98.5% · 375개점 리스크:</b> 최대 볼륨 Zone의 역성장 — Q2 중소 상권 전략 보강 및 점별 조기경보 시스템 필요</li>
+      <li><b>F4 -21개 구조조정 효과:</b> 감점에도 YTD 108.8% → 매장 효율화 전략 유효 · 할인율 +1.4%p 악화는 잔류 매장 재고 소진 압박</li>
+      <li><b>기존점 97% vs 신규점 100%:</b> 신규 오픈 효과 견조 · 연말 목표 666K(1Q 진척률 21%) — 여름 비수기 극복이 연간 목표 달성의 관건</li>
+      <li><b>매장 순감 909→902개 (F4 정리 주도):</b> H(-2) · O3(-4)도 감소 — 고효율 Zone 감소는 장기적 허브 기능 약화 우려, H 9개점 최소 유지 필요</li>
+    </ul>
+  </div>
+
+  <!-- 3. 4월 실적 (4/13 기준) -->
+  <div class="section" style="margin-top:8px;margin-bottom:8px;border:1px solid #cbd5e0;border-radius:4px;padding:8px;background:#fff;">
+    <div style="font-weight:bold;font-size:9px;color:#2d3748;margin-bottom:6px;border-bottom:1px solid #e2e8f0;padding-bottom:4px;">4월 실적 업데이트 <span style="font-size:7px;font-weight:normal;color:#718096;">(4/13 기준 · Trade Zone 정규매장 대리상)</span></div>
+
+    <!-- 당월누적 + 연간누적 (좌우 병렬) -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:6px;">
+      <div>
+        <div style="font-size:7.5px;font-weight:bold;color:#4a5568;margin-bottom:4px;">당월 누적 (4월 1~13일)</div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:4px;">
+          <div style="border:1px solid #e2e8f0;border-radius:3px;padding:6px 8px;background:#fafafa;">
+            <div style="font-size:7px;color:#718096;margin-bottom:2px;">누적 실적</div>
+            <div style="font-size:12px;font-weight:bold;color:#2d3748;">231,066K <span style="font-size:7.5px;color:#2f855a;font-weight:600;">YoY 104.4%</span></div>
+            <div style="font-size:6.5px;color:#718096;margin-top:3px;">전년 221,407K · 의류 166,597K (103.3%) · ACC 142,646K (105.6%)</div>
+          </div>
+          <div style="border:1px solid #e2e8f0;border-radius:3px;padding:6px 8px;background:#fafafa;">
+            <div style="font-size:7px;color:#718096;margin-bottom:2px;">점당 매출</div>
+            <div style="font-size:12px;font-weight:bold;color:#2d3748;">259K <span style="font-size:7.5px;color:#2f855a;font-weight:600;">YoY 104.9%</span></div>
+            <div style="font-size:6.5px;color:#718096;margin-top:3px;">전년 247K · 매장 891개 · 월말 예상 <b style="color:#2d3748;">550K</b> (47%)</div>
+          </div>
         </div>
       </div>
-      <div class="kpi-box" style="text-align:left;padding:6px 8px;">
-        <div class="kpi-label" style="text-align:center;">점당 매출 <span style="color:#38a169;">🟢</span></div>
-        <div class="kpi-value" style="text-align:center;font-size:12px;">259K</div>
-        <div style="font-size:6.5px;color:#2d3748;margin-top:3px;border-top:1px solid #e2e8f0;padding-top:3px;text-align:center;">
-          <b style="color:#2b6cb0;">YoY 104.9%</b> · 전년 247K · 매장 891개
-          <div style="margin-top:3px;font-size:7px;font-weight:bold;color:#fff;background:#1a365d;padding:2px 4px;border-radius:3px;">월말 예상 <span style="color:#90cdf4;">550K</span> <span style="color:#cbd5e0;font-weight:normal;">(진척률 47%)</span></div>
+      <div>
+        <div style="font-size:7.5px;font-weight:bold;color:#4a5568;margin-bottom:4px;">연간 누적 (YTD ~ 4/13)</div>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:4px;">
+          <div style="border:1px solid #e2e8f0;border-radius:3px;padding:6px 8px;background:#fafafa;">
+            <div style="font-size:7px;color:#718096;margin-bottom:2px;">누적 실적</div>
+            <div style="font-size:12px;font-weight:bold;color:#2d3748;">2,198,541K <span style="font-size:7.5px;color:#2f855a;font-weight:600;">YoY 113.6%</span></div>
+            <div style="font-size:6.5px;color:#718096;margin-top:3px;">전년 1,935,349K · 의류 1,568,808K (110.1%) · ACC 1,317,149K (112.3%)</div>
+          </div>
+          <div style="border:1px solid #e2e8f0;border-radius:3px;padding:6px 8px;background:#fafafa;">
+            <div style="font-size:7px;color:#718096;margin-bottom:2px;">점당 매출</div>
+            <div style="font-size:12px;font-weight:bold;color:#2d3748;">611K <span style="font-size:7.5px;color:#2f855a;font-weight:600;">YoY 114.4%</span></div>
+            <div style="font-size:6.5px;color:#718096;margin-top:3px;">전년 534K · 매장 900개 · 연말 예상 <b style="color:#2d3748;">623K</b> (33%)</div>
+          </div>
         </div>
       </div>
     </div>
-    <table style="font-size:6.5px;margin-bottom:6px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px;">
+    <div>
+    <div style="font-size:7.5px;font-weight:bold;color:#4a5568;margin:0 0 3px;">당월 누적 Zone별 (4월 1~13일)</div>
+    <table style="font-size:6.5px;">
       <tr><th>구분</th><th class="num">H</th><th class="num">F1</th><th class="num">F2</th><th class="num">F3</th><th class="num">F4</th><th class="num">O1</th><th class="num">O2</th><th class="num">O3</th></tr>
       <tr style="font-weight:bold;background:#f0f4f8;">
         <td>점당실적</td>
@@ -986,27 +1046,11 @@
         <td class="num"><span class="badge-down">+0.8%p</span></td>
       </tr>
     </table>
-
-    <!-- 연간누적 -->
-    <div style="font-size:7.5px;font-weight:bold;color:#1a365d;margin:8px 0 3px;">📊 연간 누적 (YTD ~ 4/13)</div>
-    <div class="kpi-grid" style="grid-template-columns:repeat(2,1fr);margin-bottom:4px;">
-      <div class="kpi-box" style="text-align:left;padding:6px 8px;">
-        <div class="kpi-label" style="text-align:center;">누적 실적 <span style="color:#38a169;">🟢</span></div>
-        <div class="kpi-value" style="text-align:center;font-size:12px;">2,198,541K</div>
-        <div style="font-size:6.5px;color:#2d3748;margin-top:3px;border-top:1px solid #e2e8f0;padding-top:3px;text-align:center;">
-          <b style="color:#2b6cb0;">YoY 113.6%</b> · 전년 1,935,349K
-          <div style="color:#4a5568;margin-top:2px;">의류 <b>1,568,808K (110.1%)</b> · ACC <b>1,317,149K (112.3%)</b></div>
-        </div>
-      </div>
-      <div class="kpi-box" style="text-align:left;padding:6px 8px;">
-        <div class="kpi-label" style="text-align:center;">점당 매출 <span style="color:#38a169;">🟢</span></div>
-        <div class="kpi-value" style="text-align:center;font-size:12px;">611K</div>
-        <div style="font-size:6.5px;color:#2d3748;margin-top:3px;border-top:1px solid #e2e8f0;padding-top:3px;text-align:center;">
-          <b style="color:#2b6cb0;">YoY 114.4%</b> · 전년 534K · 매장 900개
-          <div style="margin-top:3px;font-size:7px;font-weight:bold;color:#fff;background:#1a365d;padding:2px 4px;border-radius:3px;">연말 예상 <span style="color:#90cdf4;">623K</span> <span style="color:#cbd5e0;font-weight:normal;">(진척률 33%)</span></div>
-        </div>
-      </div>
     </div>
+
+    <!-- 연간 누적 Zone 테이블 -->
+    <div>
+    <div style="font-size:7.5px;font-weight:bold;color:#4a5568;margin:0 0 3px;">연간 누적 Zone별 (YTD ~ 4/13)</div>
     <table style="font-size:6.5px;">
       <tr><th>구분</th><th class="num">H</th><th class="num">F1</th><th class="num">F2</th><th class="num">F3</th><th class="num">F4</th><th class="num">O1</th><th class="num">O2</th><th class="num">O3</th></tr>
       <tr style="font-weight:bold;background:#f0f4f8;">
@@ -1046,7 +1090,9 @@
         <td class="num"><span class="badge-up">-2.9%p</span></td>
       </tr>
     </table>
-    <div style="font-size:6.5px;color:#4a5568;margin-top:3px;">
+    </div>
+    </div>
+    <div style="font-size:6.5px;color:#4a5568;margin-top:6px;">
       <b>📌 4월 핵심 시그널 (4/13):</b> 당월 점당 <b style="color:#2f855a;">104.9%</b> 플러스 전환 (3월 98% 역성장 탈피) · YTD <b style="color:#2f855a;">114.4%</b> 견조.
       F1 당월 <b style="color:#2f855a;">112.4%</b> 최고 성장 · O3 <b style="color:#2f855a;">124.0%</b> 아웃렛 최우수 · F3(98.5%)·O2(96.2%) 유일 부진.
       F4 -21개 구조조정 지속 · O1/O2 각 +3/+5개 증점 기조.
@@ -1153,170 +1199,6 @@
             9개점 중 -2개 감소 · 당월 109.7%·YTD 107.1%로 수치는 양호 — 최소 매장 수 유지 여부 모니터링 필요
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section" style="margin-bottom:8px;">
-    <div class="section-title">🤖 점당매출 AI 분석 — 대리상별 인사이트 &amp; 권장사항</div>
-    <div class="container" style="gap:6px;">
-      <div class="left">
-        <div class="box box-green">
-          <div class="box-title green">✅ 우수 대리상</div>
-          <div style="font-size:7px;font-weight:bold;color:#2f855a;margin:3px 0 2px;">매출 규모 &amp; 성장률 Top</div>
-          <ul>
-            <li><b>GUANGZHOU WANGUO (CN5490):</b> 4,880K <span class="badge-up">+1.7%</span> — 최고 매출, 광저우 남부 거점 프리미엄</li>
-            <li><b>HANGZHOU XIASHA OUTLET (CN5089):</b> 3,861K <span class="badge-up">+19.1%</span> — 아웃렛 최고 성장, 항저우 회복</li>
-          </ul>
-          <div style="font-size:7px;font-weight:bold;color:#2f855a;margin:3px 0 2px;">고성장률 대리상</div>
-          <ul>
-            <li><b>HZ HUAMAOTIANDI (CN5734):</b> 2,200K <span class="badge-up">+92.7%</span> — 전년比 2배 성장, 신규 상권 성공</li>
-            <li><b>CZ HUANQIUGANG (CN5766):</b> 2,211K <span class="badge-up">+44.3%</span></li>
-            <li><b>CHANGCHUN SHAZHICHUANG (CN5778):</b> 2,214K <span class="badge-up">+41.8%</span> — 내륙 차별화 전략 성공</li>
-          </ul>
-        </div>
-      </div>
-      <div class="right">
-        <div class="box box-red">
-          <div class="box-title red">⚠️ 수익성 개선 필요 대리상</div>
-          <div style="font-size:7px;font-weight:bold;color:#c53030;margin:3px 0 2px;">고매출 중 성장률 부진</div>
-          <ul>
-            <li><b>GUANGZHOU GRANDVIEW (CN5162):</b> 4,203K <span class="badge-down">-9.1%</span> — 2위 매출, WANGUO 대비 부진</li>
-            <li><b>CHENGDU SHIDAI OUTLET (CN5996):</b> 3,925K <span class="badge-down">-12.7%</span> — 3위 매출, 경쟁 심화</li>
-          </ul>
-          <div style="font-size:7px;font-weight:bold;color:#c53030;margin:3px 0 2px;">베이징 지역 전반 부진 (4개 매장 30%+ 감소)</div>
-          <ul>
-            <li><b>BEIJING SHOUCHUANG OUTLET (CN5980):</b> 3,109K <span class="badge-down">-39.3%</span></li>
-            <li><b>BEIJING BADALING OUTLET (CN5569):</b> 2,356K <span class="badge-down">-35.2%</span></li>
-            <li><b>BEIJING DAXING LIVAT (CN5024):</b> 2,585K <span class="badge-down">-31.5%</span></li>
-            <li><b>BEIJING HUAXIANG OUTLET (CN5885):</b> 2,714K <span class="badge-down">-29.4%</span></li>
-          </ul>
-          <div style="font-size:7px;font-weight:bold;color:#c53030;margin:3px 0 2px;">기타 주요 감소</div>
-          <ul>
-            <li><b>SUZHOU VILLAGE POP-UP (CN5323):</b> 2,014K <span class="badge-down">-38.9%</span> — 팝업 구조적 한계</li>
-            <li><b>YANCHENG JULONGHU GOLDEN EAGLE (CN5201):</b> 2,054K <span class="badge-down">-35.6%</span></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="box box-dark" style="margin-top:6px;margin-bottom:0;">
-      <div style="font-weight:bold;font-size:9px;margin-bottom:5px;">💡 핵심 인사이트 &amp; 전략적 시사점</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
-        <div>
-          <div style="font-size:7.5px;font-weight:bold;color:#90cdf4;margin-bottom:3px;">1️⃣ 지역별 양극화 심화</div>
-          <div style="font-size:7px;line-height:1.6;">
-            • 중국 남부(광저우) vs 북부(베이징) 극명한 성과 차이<br>
-            • 내륙 2~3선 도시(창춘·항저우)의 성장 잠재력 확인<br>
-            • 지역별 맞춤형 전략 및 자원 재배치 필요
-          </div>
-        </div>
-        <div>
-          <div style="font-size:7.5px;font-weight:bold;color:#90cdf4;margin-bottom:3px;">2️⃣ 업태별 성과 차이</div>
-          <div style="font-size:7px;line-height:1.6;">
-            • 아웃렛: 성장형(항저우 +19%) vs 침체형(베이징 -30%대)<br>
-            • 일반 매장 대비 아웃렛의 지역별 편차 확대<br>
-            • 아웃렛 입지·운영 전략 재검토 필요
-          </div>
-        </div>
-        <div>
-          <div style="font-size:7.5px;font-weight:bold;color:#fbb6ce;margin-bottom:3px;">3️⃣ 즉시 실행 액션플랜</div>
-          <div style="font-size:7px;line-height:1.6;">
-            <b style="color:#fc8181;">🔴 긴급:</b> 베이징 4개 매장 긴급 진단·구조조정 · GRANDVIEW 회복 프로그램 · HUAMAOTIANDI 성공 모델 벤치마킹<br>
-            <b style="color:#f6ad55;">🟡 단기:</b> 내륙 확장 전략 · 아웃렛 표준화 매뉴얼 · 지역별 차별화 MD<br>
-            <b style="color:#90cdf4;">🔵 리스크:</b> 베이징 추가 하락 시 철수 검토 · 성장 지역 우선 신규 개설 · 월별 조기경보 체계
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="kpi-grid" style="grid-template-columns: repeat(5, 1fr);">
-    <div class="kpi-box">
-      <div class="kpi-label">당월 점당매출 (3월)</div>
-      <div class="kpi-value" style="font-size:11px;">502K</div>
-      <div class="kpi-change down">YoY 98% (901개점)</div>
-    </div>
-    <div class="kpi-box">
-      <div class="kpi-label">YTD 누적 점당매출</div>
-      <div class="kpi-value" style="font-size:11px;">728K</div>
-      <div class="kpi-change up">YoY 116% (902개점)</div>
-    </div>
-    <div class="kpi-box">
-      <div class="kpi-label">기존점 (3월)</div>
-      <div class="kpi-value" style="font-size:11px;">504K</div>
-      <div class="kpi-change down">YoY 97% (849개점)</div>
-    </div>
-    <div class="kpi-box">
-      <div class="kpi-label">신규점 (3월)</div>
-      <div class="kpi-value" style="font-size:11px;">481K</div>
-      <div class="kpi-change warn">YoY 100% (52개점)</div>
-    </div>
-    <div class="kpi-box" style="background:#fffaf0;border:1px solid #f6ad55;">
-      <div class="kpi-label" style="color:#7b341e;">점당매출 월환산 <span style="font-size:6px;color:#a0522d;">(4/13 기준)</span></div>
-      <div class="kpi-value" style="font-size:11px;color:#7b341e;">550,353K</div>
-      <div class="kpi-change up">YoY <b>105.4%</b></div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="left">
-      <div class="section">
-        <div class="section-title">🏬 점당매출 당월 vs 누적 비교</div>
-        <table>
-          <tr><th>구분</th><th class="num">PY 당월</th><th class="num">점수</th><th class="num">CY 당월</th><th class="num">점수</th><th class="num">YoY</th></tr>
-          <tr style="font-weight:bold;background:#f0f4f8;">
-            <td>전체</td><td class="num">514,858</td><td class="num">904</td><td class="num">502,323</td><td class="num">901</td>
-            <td class="num"><span class="badge-down">98%</span></td>
-          </tr>
-          <tr><td>기존점</td><td class="num">517,442</td><td class="num">837</td><td class="num">503,644</td><td class="num">849</td>
-            <td class="num"><span class="badge-down">97%</span></td>
-          </tr>
-          <tr><td>신규점</td><td class="num">482,584</td><td class="num">67</td><td class="num">480,753</td><td class="num">52</td>
-            <td class="num"><span class="badge-warn">100%</span></td>
-          </tr>
-        </table>
-        <div style="font-size:7px;color:#718096;margin-top:4px;font-weight:bold;">YTD 누적 점당매출</div>
-        <table>
-          <tr><th>구분</th><th class="num">PY 누적</th><th class="num">점수</th><th class="num">CY 누적</th><th class="num">점수</th><th class="num">YoY</th></tr>
-          <tr style="font-weight:bold;background:#f0f4f8;">
-            <td>전체</td><td class="num">630,225</td><td class="num">909</td><td class="num">728,155</td><td class="num">902</td>
-            <td class="num"><span class="badge-up">116%</span></td>
-          </tr>
-          <tr><td>기존점</td><td class="num">633,051</td><td class="num">840</td><td class="num">728,798</td><td class="num">850</td>
-            <td class="num"><span class="badge-up">115%</span></td>
-          </tr>
-          <tr><td>신규점</td><td class="num">595,804</td><td class="num">69</td><td class="num">717,648</td><td class="num">52</td>
-            <td class="num"><span class="badge-up">121%</span></td>
-          </tr>
-        </table>
-        <div style="font-size:6.5px;color:#718096;margin-top:2px;">연말예상: 666K (YTD 진척률 21%)</div>
-      </div>
-    </div>
-    <div class="right">
-      <div class="box box-yellow">
-        <div class="box-title yellow">📋 점당매출 종합 시사점 (3월 · 1Q)</div>
-        <ul>
-          <li><b>당월 98% 역성장 → 4월 105.4% 반등 확인:</b> 정상화 구간으로 해석 타당 — YTD 116% 견조 · 4/13 반등으로 Q2 모멘텀 확보</li>
-          <li><b>F1 YTD 122% · O3 YTD 135% 집중 확대:</b> 정가 판매 비중 높은 고효율 Zone — F4 구조조정과 함께 포트폴리오 고도화 진행 중</li>
-          <li><b>F3 당월 98.5% · 375개점 리스크:</b> 최대 볼륨 Zone의 역성장 — Q2 중소 상권 전략 보강 및 점별 조기경보 시스템 필요</li>
-          <li><b>F4 -21개 구조조정 효과:</b> 감점에도 YTD 108.8% → 매장 효율화 전략 유효 · 할인율 +1.4%p 악화는 잔류 매장 재고 소진 압박</li>
-          <li><b>기존점 97% vs 신규점 100%:</b> 신규 오픈 효과 견조 · 연말 목표 666K(1Q 진척률 21%) — 여름 비수기 극복이 연간 목표 달성의 관건</li>
-          <li><b>매장 순감 909→902개 (F4 정리 주도):</b> H(-2) · O3(-4)도 감소 — 고효율 Zone 감소는 장기적 허브 기능 약화 우려, H 9개점 최소 유지 필요</li>
-        </ul>
-      </div>
-      <div class="box box-blue" style="margin-top:6px;">
-        <div class="box-title blue">📊 26S 의류 시즌 판매율</div>
-        <table>
-          <tr><th>아이템</th><th class="num">당월판매율</th><th class="num">전년</th><th class="num">판매YoY</th></tr>
-          <tr style="font-weight:bold;background:#f0f4f8;"><td>26S 의류 전체</td><td class="num">20.5%</td><td class="num">19.4%</td><td class="num"><span class="badge-up">+1.1%p</span></td></tr>
-          <tr><td>방풍자켓</td><td class="num">36.2%</td><td class="num">42.1%</td><td class="num"><span class="badge-up">142%</span></td></tr>
-          <tr><td>점퍼</td><td class="num">65.4%</td><td class="num">66.3%</td><td class="num"><span class="badge-up">141%</span></td></tr>
-          <tr><td>우븐팬츠</td><td class="num">18.5%</td><td class="num">18.6%</td><td class="num"><span class="badge-up">136%</span></td></tr>
-          <tr><td>반팔카라티</td><td class="num">8.8%</td><td class="num">8.3%</td><td class="num"><span class="badge-down">80%</span></td></tr>
-          <tr><td>맨투맨</td><td class="num">47.2%</td><td class="num">47.6%</td><td class="num"><span class="badge-down">80%</span></td></tr>
-        </table>
-        <div style="font-size:6.5px;color:#718096;margin-top:2px;">발주 YoY 93% — 발주 감소에도 판매율 +1.1%p 개선, 점퍼·방풍자켓 고성장 주목</div>
       </div>
     </div>
   </div>
