@@ -93,7 +93,7 @@
   <div id="kids-content" class="brand-content" style="display:none;">
 
   <!-- ==================== KIDS SECTION 1 ==================== -->
-  <div class="page-title">1. Executive Summary - 3월 당월 핵심 KPI <span style="font-size:9px;font-weight:600;color:#4a5568;margin-left:6px;">[대리상 점당매출: 2월 128% → 3월 121% → 4월 추정 115%]</span></div>
+  <div class="page-title">1. Executive Summary - 3월 당월 핵심 KPI <span style="font-size:9px;font-weight:700;color:#1a365d;background:#bee3f8;padding:2px 8px;border-radius:4px;margin-left:6px;border:1px solid #90cdf4;">[대리상 점당매출: 2월 128% → 3월 121% → 4월 추정 115%]</span></div>
 
   <!-- 메인 KPI 5종 -->
   <div style="display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #cbd5e0;border-radius:6px;overflow:hidden;box-shadow:0 2px 8px rgba(26,54,93,0.08);margin-bottom:8px;background:#fff;">
@@ -668,39 +668,66 @@
       </table>
     </div>
 
-    <!-- 카드 4: ACC 재고주수 요약 -->
+    <!-- 카드 4: ACC 리테일매출 요약 (KIDS) -->
     <div style="border:1px solid #cbd5e0;border-radius:4px;padding:8px;background:#fff;">
       <div style="display:flex;justify-content:space-between;align-items:baseline;">
-        <span style="font-size:8px;font-weight:bold;color:#4a5568;">📦 ACC 재고주수</span>
-        <span style="font-size:6.5px;color:#c53030;font-weight:bold;">YoY +14.9주</span>
+        <span style="font-size:8px;font-weight:bold;color:#4a5568;">🛒 ACC 리테일매출</span>
+        <span style="font-size:6.5px;color:#718096;font-weight:bold;">(YoY)</span>
       </div>
-      <div style="font-size:16px;font-weight:800;color:#1a365d;margin:3px 0;">56<span style="font-size:9px;color:#718096;">주</span></div>
-      <div style="font-size:6.5px;color:#718096;margin-bottom:3px;">전년 41.1주 · 전월 대비 증가</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;margin:5px 0 3px;">
+        <div style="background:#ebf8ff;border-radius:3px;padding:3px 2px;text-align:center;">
+          <div style="font-size:6.5px;color:#4a5568;font-weight:600;">1월</div>
+          <div style="font-size:11px;font-weight:800;color:#1a365d;line-height:1.1;">13<span style="font-size:8px;color:#718096;">M</span></div>
+          <div style="font-size:6.5px;font-weight:700;color:#c53030;">66%</div>
+        </div>
+        <div style="background:#f0fff4;border-radius:3px;padding:3px 2px;text-align:center;">
+          <div style="font-size:6.5px;color:#4a5568;font-weight:600;">2월</div>
+          <div style="font-size:11px;font-weight:800;color:#1a365d;line-height:1.1;">14<span style="font-size:8px;color:#718096;">M</span></div>
+          <div style="font-size:6.5px;font-weight:700;color:#2f855a;">173%</div>
+        </div>
+        <div style="background:#fffaf0;border-radius:3px;padding:3px 2px;text-align:center;">
+          <div style="font-size:6.5px;color:#4a5568;font-weight:600;">3월</div>
+          <div style="font-size:11px;font-weight:800;color:#1a365d;line-height:1.1;">10<span style="font-size:8px;color:#718096;">M</span></div>
+          <div style="font-size:6.5px;font-weight:700;color:#c53030;">81%</div>
+        </div>
+      </div>
       <div style="display:flex;justify-content:space-between;align-items:center;font-size:6.5px;color:#718096;border-top:1px solid #e2e8f0;padding-top:3px;">
-        <span>아이템별 (전체/전년/대리상/본사)</span>
-        <button onclick="var t=document.getElementById('kids-acc-summary'),b=document.getElementById('kids-acc-summary-btn');if(t.style.display==='none'){t.style.display='table';b.textContent='▲ 접기';}else{t.style.display='none';b.textContent='▼ 펼치기';}" id="kids-acc-summary-btn" style="font-size:6.5px;padding:1px 5px;cursor:pointer;background:#edf2f7;border:1px solid #cbd5e0;border-radius:3px;">▼ 펼치기</button>
+        <span>월별·아이템별 (합계/대리상/직영, YoY%)</span>
+        <button onclick="var t=document.getElementById('kids-acc-retail-detail'),b=document.getElementById('kids-acc-retail-btn');if(t.style.display==='none'){t.style.display='table';b.textContent='▲ 접기';}else{t.style.display='none';b.textContent='▼ 펼치기';}" id="kids-acc-retail-btn" style="font-size:6.5px;padding:1px 5px;cursor:pointer;background:#edf2f7;border:1px solid #cbd5e0;border-radius:3px;">▼ 펼치기</button>
       </div>
-      <table id="kids-acc-summary" style="display:none;font-size:6.5px;margin-top:3px;">
-        <tr><th>아이템</th><th class="num">전체</th><th class="num">전년</th><th class="num">대리상</th><th class="num">본사</th></tr>
-        <tr><td>신발</td><td class="num" style="color:#c53030;font-weight:bold;">65.8</td><td class="num">40.5</td><td class="num">58.8</td><td class="num">16.2</td></tr>
-        <tr><td>모자</td><td class="num">46.5</td><td class="num">39.6</td><td class="num">48.7</td><td class="num">8.8</td></tr>
-        <tr><td>가방</td><td class="num">40.3</td><td class="num">40.6</td><td class="num">26.6</td><td class="num">14.0</td></tr>
-        <tr><td>기타</td><td class="num">203.6</td><td class="num">116.4</td><td class="num">264.3</td><td class="num">45.1</td></tr>
+      <table id="kids-acc-retail-detail" style="display:none;font-size:6.5px;margin-top:3px;">
+        <tr><th>월</th><th>아이템</th><th class="num">합계 (YoY)</th><th class="num">대리상 (YoY)</th><th class="num">직영 (YoY)</th></tr>
+        <tr style="background:#ebf8ff;"><td rowspan="5" style="vertical-align:middle;background:#bee3f8;font-weight:bold;">1월</td><td>신발</td><td class="num">8,092 (58%)</td><td class="num">5,582 (51%)</td><td class="num">2,510 (82%)</td></tr>
+        <tr style="background:#ebf8ff;"><td>모자</td><td class="num">2,368 (75%)</td><td class="num">1,383 (61%)</td><td class="num">986 (108%)</td></tr>
+        <tr style="background:#ebf8ff;"><td>가방</td><td class="num">1,869 (128%)</td><td class="num">1,316 (121%)</td><td class="num">553 (149%)</td></tr>
+        <tr style="background:#ebf8ff;"><td>기타</td><td class="num">189 (57%)</td><td class="num">133 (47%)</td><td class="num">56 (114%)</td></tr>
+        <tr style="background:#bee3f8;font-weight:bold;"><td>소계</td><td class="num">12,518 (66%)</td><td class="num">8,414 (58%)</td><td class="num">4,104 (93%)</td></tr>
+        <tr style="background:#f0fff4;"><td rowspan="5" style="vertical-align:middle;background:#c6f6d5;font-weight:bold;">2월</td><td>신발</td><td class="num">8,840 (181%)</td><td class="num">6,917 (183%)</td><td class="num">1,922 (175%)</td></tr>
+        <tr style="background:#f0fff4;"><td>모자</td><td class="num">3,020 (166%)</td><td class="num">1,940 (149%)</td><td class="num">1,080 (207%)</td></tr>
+        <tr style="background:#f0fff4;"><td>가방</td><td class="num">2,028 (152%)</td><td class="num">1,525 (144%)</td><td class="num">502 (185%)</td></tr>
+        <tr style="background:#f0fff4;"><td>기타</td><td class="num">150 (158%)</td><td class="num">111 (152%)</td><td class="num">39 (179%)</td></tr>
+        <tr style="background:#c6f6d5;font-weight:bold;"><td>소계</td><td class="num">14,038 (173%)</td><td class="num">10,494 (169%)</td><td class="num">3,543 (185%)</td></tr>
+        <tr style="background:#fffaf0;"><td rowspan="5" style="vertical-align:middle;background:#fbd38d;font-weight:bold;">3월</td><td>신발</td><td class="num">4,594 (61%)</td><td class="num">3,379 (57%)</td><td class="num">1,215 (75%)</td></tr>
+        <tr style="background:#fffaf0;"><td>모자</td><td class="num">2,843 (88%)</td><td class="num">1,575 (73%)</td><td class="num">1,268 (117%)</td></tr>
+        <tr style="background:#fffaf0;"><td>가방</td><td class="num">2,254 (189%)</td><td class="num">1,763 (179%)</td><td class="num">491 (238%)</td></tr>
+        <tr style="background:#fffaf0;"><td>기타</td><td class="num">64 (54%)</td><td class="num">37 (40%)</td><td class="num">28 (100%)</td></tr>
+        <tr style="background:#fbd38d;font-weight:bold;"><td>소계</td><td class="num">9,756 (81%)</td><td class="num">6,754 (74%)</td><td class="num">3,002 (102%)</td></tr>
       </table>
-      <div style="font-size:6.5px;color:#22543d;background:#f0fff4;border-left:2px solid #68d391;padding:3px 5px;margin-top:3px;">※ 신발: 57주 · 1→2→3월 57→46→46 (개선 진행 중)</div>
     </div>
   </div>
 
   <!-- 3-1 분석 박스 -->
   <div class="container" style="margin-bottom:8px;">
     <div class="left">
-      <div class="box" style="background:#fff5f5;border-color:#fc8181;">
-        <div class="box-title red">⚠️ 재고 주의 신호</div>
+      <div class="box" style="background:#ebf8ff;border-color:#90cdf4;">
+        <div class="box-title" style="color:#2b6cb0;">🛒 ACC 리테일매출 — 1~2월 합산 보정 진단</div>
         <ul>
-          <li><b>본사 신발 124% (27→33M):</b> 주력 카테고리 재고 증가 — 리테일 61% 역성장과 맞물려 소진 정체</li>
-          <li><b>본사 가방 284% (5→14M):</b> 규모 작으나 증가율 경계 — 리테일 189% 성장 중이나 재고 속도 과잉</li>
-          <li><b>대리상 과시즌 의류 124% (65→81M):</b> 시즌 마감 잔여 재고 누적</li>
-          <li><b>ACC 재고주수 신발 65.8주 (전년 40.5주, +25.3주):</b> 주력 ACC 소진 정체</li>
+          <li class="group-head" style="list-style:none;margin-left:-18px;font-weight:700;color:#c53030;border-bottom:1px solid #fed7d7;padding:2px 0;margin-top:2px;">🔴 1~2월 합산 (춘절 보정) — 실질 -2% 역성장</li>
+          <li>ACC가 같은 기간 +18% 기록한 것과 정반대 · 채널 구조가 이분화되어 <b>대리상 -9%</b>로 끌어내리고 <b>직영 +21%</b>로 방어하는 형태 — 아이템별로 신발(-10%)·기타(-21%)가 역성장 주도, <b>가방(+40%)</b>만 유일한 성장세</li>
+          <li class="group-head" style="list-style:none;margin-left:-18px;font-weight:700;color:#c53030;border-bottom:1px solid #fed7d7;padding:2px 0;margin-top:4px;">🔴 3월 (순수 기저) — -19% 역성장 심화</li>
+          <li>가장 심각한 건 <b>신발 -39%</b> · 규모 1위 카테고리가 무너지니 전체 방어 수단 부재 — 대리상 -26% 급락, 직영은 +2% 간신히 플러스 · <b>가방(+89%)</b>이 유일한 긍정 신호이나 비중이 작아 상쇄 효과 미미</li>
+          <li class="group-head" style="list-style:none;margin-left:-18px;font-weight:700;color:#2b6cb0;border-bottom:1px solid #bee3f8;padding:2px 0;margin-top:4px;">🔵 결론</li>
+          <li><b>신발 부진 + 대리상 채널 약화가 핵심 문제</b> — 신발 대리상 원인 진단 + 직영 전환 가속이 단기 최우선 과제</li>
         </ul>
       </div>
     </div>
@@ -1454,21 +1481,47 @@
 
     <div style="border:1px solid #cbd5e0;border-radius:4px;padding:8px;background:#fff;">
       <div style="display:flex;justify-content:space-between;align-items:baseline;">
-        <span style="font-size:8px;font-weight:bold;color:#4a5568;">📦 ACC 재고주수</span>
-        <span style="font-size:6.5px;color:#718096;font-weight:bold;">런칭 첫해</span>
+        <span style="font-size:8px;font-weight:bold;color:#4a5568;">🛒 ACC 리테일매출</span>
+        <span style="font-size:6.5px;color:#718096;font-weight:bold;">(YoY · K)</span>
       </div>
-      <div style="font-size:16px;font-weight:800;color:#1a365d;margin:3px 0;">500.4<span style="font-size:9px;color:#718096;">주</span></div>
-      <div style="font-size:6.5px;color:#718096;margin-bottom:3px;">전년 427.6주 · 1→2→3월: 354 → 346 → 500</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;margin:5px 0 3px;">
+        <div style="background:#ebf8ff;border-radius:3px;padding:3px 2px;text-align:center;">
+          <div style="font-size:6.5px;color:#4a5568;font-weight:600;">1월</div>
+          <div style="font-size:11px;font-weight:800;color:#1a365d;line-height:1.1;">391<span style="font-size:8px;color:#718096;">K</span></div>
+          <div style="font-size:6.5px;font-weight:700;color:#2f855a;">308%</div>
+        </div>
+        <div style="background:#f0fff4;border-radius:3px;padding:3px 2px;text-align:center;">
+          <div style="font-size:6.5px;color:#4a5568;font-weight:600;">2월</div>
+          <div style="font-size:11px;font-weight:800;color:#1a365d;line-height:1.1;">340<span style="font-size:8px;color:#718096;">K</span></div>
+          <div style="font-size:6.5px;font-weight:700;color:#2f855a;">168%</div>
+        </div>
+        <div style="background:#fffaf0;border-radius:3px;padding:3px 2px;text-align:center;">
+          <div style="font-size:6.5px;color:#4a5568;font-weight:600;">3월</div>
+          <div style="font-size:11px;font-weight:800;color:#1a365d;line-height:1.1;">310<span style="font-size:8px;color:#718096;">K</span></div>
+          <div style="font-size:6.5px;font-weight:700;color:#2f855a;">235%</div>
+        </div>
+      </div>
       <div style="display:flex;justify-content:space-between;align-items:center;font-size:6.5px;color:#718096;border-top:1px solid #e2e8f0;padding-top:3px;">
-        <span>아이템별 (전체/전년/대리상/본사)</span>
-        <button onclick="var t=document.getElementById('disc-acc-summary'),b=document.getElementById('disc-acc-summary-btn');if(t.style.display==='none'){t.style.display='table';b.textContent='▲ 접기';}else{t.style.display='none';b.textContent='▼ 펼치기';}" id="disc-acc-summary-btn" style="font-size:6.5px;padding:1px 5px;cursor:pointer;background:#edf2f7;border:1px solid #cbd5e0;border-radius:3px;">▼ 펼치기</button>
+        <span>월별·아이템별 (합계/대리상/직영, YoY%)</span>
+        <button onclick="var t=document.getElementById('disc-acc-retail-detail'),b=document.getElementById('disc-acc-retail-btn');if(t.style.display==='none'){t.style.display='table';b.textContent='▲ 접기';}else{t.style.display='none';b.textContent='▼ 펼치기';}" id="disc-acc-retail-btn" style="font-size:6.5px;padding:1px 5px;cursor:pointer;background:#edf2f7;border:1px solid #cbd5e0;border-radius:3px;">▼ 펼치기</button>
       </div>
-      <table id="disc-acc-summary" style="display:none;font-size:6.5px;margin-top:3px;">
-        <tr><th>아이템</th><th class="num">전체</th><th class="num">전년</th><th class="num">대리상</th><th class="num">본사</th></tr>
-        <tr><td>신발</td><td class="num" style="color:#c53030;font-weight:bold;">639.5</td><td class="num">333.6</td><td class="num">222.7</td><td class="num">525.6</td></tr>
-        <tr><td>모자</td><td class="num">299.4</td><td class="num">407.7</td><td class="num">72.4</td><td class="num">245.4</td></tr>
-        <tr><td>가방</td><td class="num">517.8</td><td class="num">842.6</td><td class="num">115.5</td><td class="num">426.9</td></tr>
-        <tr><td>기타</td><td class="num">649.7</td><td class="num">1,147.9</td><td class="num">423.2</td><td class="num">510.4</td></tr>
+      <table id="disc-acc-retail-detail" style="display:none;font-size:6.5px;margin-top:3px;">
+        <tr><th>월</th><th>아이템</th><th class="num">합계 (YoY)</th><th class="num">대리상 (YoY)</th><th class="num">직영 (YoY)</th></tr>
+        <tr style="background:#ebf8ff;"><td rowspan="5" style="vertical-align:middle;background:#bee3f8;font-weight:bold;">1월</td><td>신발</td><td class="num">139 (158%)</td><td class="num">77 (136%)</td><td class="num">62 (198%)</td></tr>
+        <tr style="background:#ebf8ff;"><td>모자</td><td class="num">163 (723%)</td><td class="num">84 (1,180%)</td><td class="num">79 (514%)</td></tr>
+        <tr style="background:#ebf8ff;"><td>가방</td><td class="num">38 (390%)</td><td class="num">26 (1,594%)</td><td class="num">12 (151%)</td></tr>
+        <tr style="background:#ebf8ff;"><td>기타</td><td class="num">52 (737%)</td><td class="num">14 (684%)</td><td class="num">37 (760%)</td></tr>
+        <tr style="background:#bee3f8;font-weight:bold;"><td>소계</td><td class="num">391 (308%)</td><td class="num">200 (298%)</td><td class="num">191 (319%)</td></tr>
+        <tr style="background:#f0fff4;"><td rowspan="5" style="vertical-align:middle;background:#c6f6d5;font-weight:bold;">2월</td><td>신발</td><td class="num">158 (127%)</td><td class="num">117 (337%)</td><td class="num">41 (45%)</td></tr>
+        <tr style="background:#f0fff4;"><td>모자</td><td class="num">125 (317%)</td><td class="num">69 (732%)</td><td class="num">56 (186%)</td></tr>
+        <tr style="background:#f0fff4;"><td>가방</td><td class="num">40 (117%)</td><td class="num">27 (311%)</td><td class="num">13 (51%)</td></tr>
+        <tr style="background:#f0fff4;"><td>기타</td><td class="num">17 (446%)</td><td class="num">9 (859%)</td><td class="num">8 (282%)</td></tr>
+        <tr style="background:#c6f6d5;font-weight:bold;"><td>소계</td><td class="num">340 (168%)</td><td class="num">223 (412%)</td><td class="num">117 (79%)</td></tr>
+        <tr style="background:#fffaf0;"><td rowspan="5" style="vertical-align:middle;background:#fbd38d;font-weight:bold;">3월</td><td>신발</td><td class="num">134 (165%)</td><td class="num">61 (173%)</td><td class="num">72 (160%)</td></tr>
+        <tr style="background:#fffaf0;"><td>모자</td><td class="num">110 (327%)</td><td class="num">70 (665%)</td><td class="num">40 (172%)</td></tr>
+        <tr style="background:#fffaf0;"><td>가방</td><td class="num">60 (377%)</td><td class="num">45 (1,174%)</td><td class="num">15 (125%)</td></tr>
+        <tr style="background:#fffaf0;"><td>기타</td><td class="num">7 (414%)</td><td class="num">2 (285%)</td><td class="num">5 (538%)</td></tr>
+        <tr style="background:#fbd38d;font-weight:bold;"><td>소계</td><td class="num">310 (235%)</td><td class="num">178 (352%)</td><td class="num">132 (162%)</td></tr>
       </table>
     </div>
   </div>
@@ -1476,13 +1529,15 @@
   <!-- 3-1 분석 박스 -->
   <div class="container" style="margin-bottom:8px;">
     <div class="left">
-      <div class="box" style="background:#fff5f5;border-color:#fc8181;">
-        <div class="box-title red">⚠️ 재고 주의 신호</div>
+      <div class="box" style="background:#ebf8ff;border-color:#90cdf4;">
+        <div class="box-title" style="color:#2b6cb0;">🛒 ACC 리테일매출 — 1~2월 합산 보정 진단</div>
         <ul>
-          <li><b>본사 25F 의류 1,468% (23→340M):</b> F 시즌 과잉 매입 — 연내 소진 매우 어려움</li>
-          <li><b>본사 25S 4,656% (2→73M):</b> 신규 브랜드 초기 매입 집중 · 시즌 말 재고 리스크</li>
-          <li><b>ACC 재고주수 500.4주:</b> 신발 639.5주 · 기타 649.7주 — 소진 속도 매우 느림</li>
-          <li><b>대리상 재고 54M (355%):</b> 기저 낮으나 신규 확대 단계에서 집중</li>
+          <li class="group-head" style="list-style:none;margin-left:-18px;font-weight:700;color:#2b6cb0;border-bottom:1px solid #bee3f8;padding:2px 0;margin-top:2px;">🔵 1~2월 합산 (춘절 보정) — 실질 +122% 성장</li>
+          <li>합산 기준에도 전년 대비 두 배 이상 성장 확인 · 단 채널 구조가 극단 이분화 — <b>대리상 +250%</b> 폭발적 확장 vs <b>직영 +48%</b> 그쳤고 특히 2월 직영 79% 역성장 · 대리상 의존 심화 구조 확인</li>
+          <li class="group-head" style="list-style:none;margin-left:-18px;font-weight:700;color:#276749;border-bottom:1px solid #c6f6d5;padding:2px 0;margin-top:4px;">🟢 3월 (순수 기저) — +135% 성장 지속</li>
+          <li>춘절 효과 없이도 전채널·전카테고리 고른 성장 · <b>대리상 +252% · 직영 +62%</b> 모두 플러스 유지 — 1~2월보다 직영 기여 회복되는 모습</li>
+          <li class="group-head" style="list-style:none;margin-left:-18px;font-weight:700;color:#2b6cb0;border-bottom:1px solid #bee3f8;padding:2px 0;margin-top:4px;">🔵 결론</li>
+          <li>작은 브랜드의 <b>초기 외형 확장 국면</b> · 성장세 자체는 긍정적 · 대리상 과의존 구조 고착 전 <b>직영 기반 동반 육성</b>이 중기 과제 — 당장은 채널 다변화보다 <b>전체 유통망 확장 속도 유지</b>가 우선</li>
         </ul>
       </div>
     </div>
@@ -1638,7 +1693,7 @@
   <div id="mlb-shared" class="brand-content">
 
   <!-- ==================== SECTION 1 ==================== -->
-  <div class="page-title" id="sec1">1. Executive Summary - 3월 당월 핵심 KPI <span style="font-size:9px;font-weight:600;color:#4a5568;margin-left:6px;">[대리상 점당매출: 2월 122% → 3월 98% → 4월 추정 105%]</span></div>
+  <div class="page-title" id="sec1">1. Executive Summary - 3월 당월 핵심 KPI <span style="font-size:9px;font-weight:700;color:#1a365d;background:#bee3f8;padding:2px 8px;border-radius:4px;margin-left:6px;border:1px solid #90cdf4;">[대리상 점당매출: 2월 122% → 3월 98% → 4월 추정 105%]</span></div>
 
   <!-- 메인 KPI 5종 -->
   <div style="display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #cbd5e0;border-radius:6px;overflow:hidden;box-shadow:0 2px 8px rgba(26,54,93,0.08);margin-bottom:8px;background:#fff;">
@@ -2408,71 +2463,100 @@
       </table>
     </div>
 
-    <!-- 카드 4: ACC 재고주수 요약 -->
+    <!-- 카드 4: ACC 리테일매출 요약 (MLB) -->
     <div style="border:1px solid #cbd5e0;border-radius:4px;padding:8px;background:#fff;">
       <div style="display:flex;justify-content:space-between;align-items:baseline;">
-        <span style="font-size:8px;font-weight:bold;color:#4a5568;">📦 ACC 재고주수</span>
-        <span style="font-size:6.5px;color:#c53030;font-weight:bold;">YoY +15.7주</span>
+        <span style="font-size:8px;font-weight:bold;color:#4a5568;">🛒 ACC 리테일매출</span>
+        <span style="font-size:6.5px;color:#718096;font-weight:bold;">(YoY)</span>
       </div>
-      <div style="font-size:16px;font-weight:800;color:#1a365d;margin:3px 0;">48.9<span style="font-size:9px;color:#718096;">주</span></div>
-      <div style="font-size:6.5px;color:#718096;margin-bottom:3px;">전년 33.2주 · 1→2→3월: 47.4→33.3→48.9</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;margin:5px 0 3px;">
+        <div style="background:#ebf8ff;border-radius:3px;padding:3px 2px;text-align:center;">
+          <div style="font-size:6.5px;color:#4a5568;font-weight:600;">1월</div>
+          <div style="font-size:11px;font-weight:800;color:#1a365d;line-height:1.1;">380<span style="font-size:8px;color:#718096;">M</span></div>
+          <div style="font-size:6.5px;font-weight:700;color:#c53030;">86%</div>
+        </div>
+        <div style="background:#f0fff4;border-radius:3px;padding:3px 2px;text-align:center;">
+          <div style="font-size:6.5px;color:#4a5568;font-weight:600;">2월</div>
+          <div style="font-size:11px;font-weight:800;color:#1a365d;line-height:1.1;">468<span style="font-size:8px;color:#718096;">M</span></div>
+          <div style="font-size:6.5px;font-weight:700;color:#2f855a;">170%</div>
+        </div>
+        <div style="background:#fffaf0;border-radius:3px;padding:3px 2px;text-align:center;">
+          <div style="font-size:6.5px;color:#4a5568;font-weight:600;">3월</div>
+          <div style="font-size:11px;font-weight:800;color:#1a365d;line-height:1.1;">326<span style="font-size:8px;color:#718096;">M</span></div>
+          <div style="font-size:6.5px;font-weight:700;color:#dd6b20;">102%</div>
+        </div>
+      </div>
       <div style="display:flex;justify-content:space-between;align-items:center;font-size:6.5px;color:#718096;border-top:1px solid #e2e8f0;padding-top:3px;">
-        <span>아이템별 (전체/대리상/본사)</span>
-        <button onclick="var t=document.getElementById('acc-summary-detail'),b=document.getElementById('acc-summary-btn');if(t.style.display==='none'){t.style.display='table';b.textContent='▲ 접기';}else{t.style.display='none';b.textContent='▼ 펼치기';}" id="acc-summary-btn" style="font-size:6.5px;padding:1px 5px;cursor:pointer;background:#edf2f7;border:1px solid #cbd5e0;border-radius:3px;">▼ 펼치기</button>
+        <span>월별·아이템별 (합계/대리상/직영, YoY%)</span>
+        <button onclick="var t=document.getElementById('mlb-acc-retail-detail'),b=document.getElementById('mlb-acc-retail-btn');if(t.style.display==='none'){t.style.display='table';b.textContent='▲ 접기';}else{t.style.display='none';b.textContent='▼ 펼치기';}" id="mlb-acc-retail-btn" style="font-size:6.5px;padding:1px 5px;cursor:pointer;background:#edf2f7;border:1px solid #cbd5e0;border-radius:3px;">▼ 펼치기</button>
       </div>
-      <table id="acc-summary-detail" style="display:none;font-size:6.5px;margin-top:3px;">
-        <tr><th>아이템</th><th class="num">전체</th><th class="num">전년</th><th class="num">대리상</th><th class="num">본사</th></tr>
-        <tr><td>신발</td><td class="num" style="color:#c53030;font-weight:bold;">58.0</td><td class="num">34.5</td><td class="num">43.3</td><td class="num">17.4</td></tr>
-        <tr><td>모자</td><td class="num">30.4</td><td class="num">25.8</td><td class="num">25.3</td><td class="num">5.1</td></tr>
-        <tr><td>가방</td><td class="num">45.8</td><td class="num">43.9</td><td class="num">37.3</td><td class="num">10.5</td></tr>
-        <tr><td>기타</td><td class="num">81.6</td><td class="num">59.7</td><td class="num">74.5</td><td class="num">13.3</td></tr>
+      <table id="mlb-acc-retail-detail" style="display:none;font-size:6.5px;margin-top:3px;">
+        <tr><th>월</th><th>아이템</th><th class="num">합계 (YoY)</th><th class="num">대리상 (YoY)</th><th class="num">직영 (YoY)</th></tr>
+        <tr style="background:#ebf8ff;"><td rowspan="5" style="vertical-align:middle;background:#bee3f8;font-weight:bold;">1월</td><td>신발</td><td class="num">252,430 (78%)</td><td class="num">208,696 (74%)</td><td class="num">43,734 (103%)</td></tr>
+        <tr style="background:#ebf8ff;"><td>모자</td><td class="num">102,048 (119%)</td><td class="num">83,057 (114%)</td><td class="num">18,992 (148%)</td></tr>
+        <tr style="background:#ebf8ff;"><td>가방</td><td class="num">20,723 (76%)</td><td class="num">17,307 (77%)</td><td class="num">3,416 (76%)</td></tr>
+        <tr style="background:#ebf8ff;"><td>기타</td><td class="num">4,534 (89%)</td><td class="num">4,104 (89%)</td><td class="num">430 (89%)</td></tr>
+        <tr style="background:#bee3f8;font-weight:bold;"><td>소계</td><td class="num">379,736 (86%)</td><td class="num">313,163 (82%)</td><td class="num">66,573 (111%)</td></tr>
+        <tr style="background:#f0fff4;"><td rowspan="5" style="vertical-align:middle;background:#c6f6d5;font-weight:bold;">2월</td><td>신발</td><td class="num">324,664 (181%)</td><td class="num">295,036 (189%)</td><td class="num">29,628 (129%)</td></tr>
+        <tr style="background:#f0fff4;"><td>모자</td><td class="num">113,232 (164%)</td><td class="num">100,286 (169%)</td><td class="num">12,946 (131%)</td></tr>
+        <tr style="background:#f0fff4;"><td>가방</td><td class="num">26,945 (106%)</td><td class="num">24,343 (110%)</td><td class="num">2,603 (78%)</td></tr>
+        <tr style="background:#f0fff4;"><td>기타</td><td class="num">3,549 (164%)</td><td class="num">3,319 (168%)</td><td class="num">229 (125%)</td></tr>
+        <tr style="background:#c6f6d5;font-weight:bold;"><td>소계</td><td class="num">468,390 (170%)</td><td class="num">422,984 (176%)</td><td class="num">45,407 (125%)</td></tr>
+        <tr style="background:#fffaf0;"><td rowspan="5" style="vertical-align:middle;background:#fbd38d;font-weight:bold;">3월</td><td>신발</td><td class="num">198,612 (97%)</td><td class="num">170,192 (97%)</td><td class="num">28,420 (98%)</td></tr>
+        <tr style="background:#fffaf0;"><td>모자</td><td class="num">101,873 (119%)</td><td class="num">86,303 (122%)</td><td class="num">15,570 (104%)</td></tr>
+        <tr style="background:#fffaf0;"><td>가방</td><td class="num">23,843 (88%)</td><td class="num">20,344 (90%)</td><td class="num">3,499 (79%)</td></tr>
+        <tr style="background:#fffaf0;"><td>기타</td><td class="num">2,050 (83%)</td><td class="num">1,811 (80%)</td><td class="num">239 (122%)</td></tr>
+        <tr style="background:#fbd38d;font-weight:bold;"><td>소계</td><td class="num">326,377 (102%)</td><td class="num">278,650 (103%)</td><td class="num">47,728 (98%)</td></tr>
       </table>
     </div>
 
   </div>
 
-  <!-- ⚠️ ACC 재고주수 추세 분석 (3-1 당월 분석) -->
-  <div class="box box-red" style="margin-bottom:8px;">
-    <div class="box-title red">⚠️ ACC 재고주수 추세 분석 — 아이템별 진단</div>
+  <!-- 👕 의류 재고 추세 (좌) · 📊 ACC 리테일매출 추세 (우) -->
+  <div class="container" style="margin-bottom:8px;">
+    <div class="left">
+      <div class="box" style="border-color:#f6ad55;background:#fffaf0;">
+        <div class="box-title" style="color:#975a16;">👕 의류 재고 추세 분석 — 본사/대리상</div>
 
-    <div style="font-size:7px;font-weight:bold;color:#c53030;margin:2px 0 2px;border-bottom:1px solid #fed7d7;padding-bottom:1px;">🔴 즉각 개입 필요</div>
-    <ul style="margin-bottom:4px;">
-      <li><b>신발 주의 (50.7→34.4→58.0주, 전년比 +23.5주):</b> 2월 춘절 소진이 일시적이었음 확인 — 3월 재입고로 재고주수 상승 · 연간 판매 추정(대리상 105%) 기준에서도 소진까지 1년 이상 소요 예상 · 4~5월 집중 프로모션 없이는 Q3까지 재고 누적 가능</li>
-    </ul>
+        <div style="font-size:7px;font-weight:bold;color:#c05621;margin:2px 0 2px;border-bottom:1px solid #feebc8;padding-bottom:1px;">🟠 핵심 관찰</div>
+        <ul style="margin-bottom:4px;">
+          <li><b>본사 의류 합계 2,083M (YoY 148%):</b> 26S 122%·25F 178%·25S 300%·과시즌 140%로 전반 누적 — 신시즌과 이월 재고가 동시에 증가하는 구조</li>
+          <li><b>대리상 의류 합계 3,514M (YoY 101%):</b> 총량은 전년 수준이나 25F 113%·25S 109%로 이월 재고 비중이 높은 상태</li>
+        </ul>
 
-    <div style="font-size:7px;font-weight:bold;color:#975a16;margin:2px 0 2px;border-bottom:1px solid #fefcbf;padding-bottom:1px;">🟠 관리 필요</div>
-    <ul style="margin-bottom:4px;">
-      <li><b>가방 재악화 반복 (59.1→39.2→45.8주, YoY +1.9주):</b> 2월 소진 후 3월 재급등 패턴 · 리테일 YTD 90% 부진과 동반 — 수요 기반 자체가 약화되고 있어 신규 발주 재검토 필요</li>
-      <li><b>대리상 전체 재고 6,088M (106%):</b> 2월 9,831M 대비 분기말 38% 정리에도 전년比 증가 — 실질 재고 부담 지속 · 3월말 기준 수치로 4월 재고 확인 필요</li>
-    </ul>
+        <div style="font-size:7px;font-weight:bold;color:#9c4221;margin:2px 0 2px;border-bottom:1px solid #fbd38d;padding-bottom:1px;">🔎 리스크 포인트</div>
+        <ul style="margin-bottom:4px;">
+          <li><b>26S 재고 미스매치:</b> 대리상 26S는 88%로 낮아졌지만 본사 26S는 122%로 증가 — 채널 간 재고 불균형 지속 시 추가 할인/이관 부담 가능</li>
+          <li><b>25F·25S 체류 리스크:</b> 대리상 25F 113%, 25S 109%가 유지되면 Q2 신상품 운영 여력 축소 — 발주 통제와 소진 프로모션 병행 필요</li>
+        </ul>
 
-    <div style="font-size:7px;font-weight:bold;color:#276749;margin:2px 0 2px;border-bottom:1px solid #c6f6d5;padding-bottom:1px;">🟢 상대적 양호</div>
-    <ul>
-      <li><b>모자 개선 추세 (36.8→28.2→30.4주):</b> 3월 소폭 반등에도 전년比 +4.6주 유일 우려 — 출고 YTD 181% 고성장이 재고 소진 견인 중 · 4월도 가속 성장 지속 시 연내 정상화 기대</li>
-      <li><b>본사 재고 3,545M(194%):</b> 신발 456%·모자 210%로 위험하나 ACC입고 80.9% 통제 중 · 연간 판매 추정 기준 직영 ACC재고 -878M 소진 예상 · 잔여 발주 예산 904.51M으로 하반기 유연 대응 가능</li>
-    </ul>
-  </div>
+        <div style="font-size:7px;font-weight:bold;color:#276749;margin:2px 0 2px;border-bottom:1px solid #c6f6d5;padding-bottom:1px;">✅ 실행 시사점</div>
+        <ul>
+          <li><b>의류 운영 우선순위:</b> 26S는 채널별 배분 재조정, 25F·25S는 대리상 중심 소진 프로모션으로 분리 대응 — ACC 중심 대응에 의류 관리 축을 추가</li>
+        </ul>
+      </div>
+    </div>
+    <div class="right">
+      <div class="box" style="border-color:#90cdf4;background:#ebf8ff;">
+        <div class="box-title" style="color:#2b6cb0;">📊 ACC 리테일매출 추세 — 1~2월 합산 보정 진단</div>
 
-  <!-- 👕 의류 재고 추세 분석 (3-1 당월 분석) -->
-  <div class="box" style="margin-bottom:8px;border-color:#f6ad55;background:#fffaf0;">
-    <div class="box-title" style="color:#975a16;">👕 의류 재고 추세 분석 — 본사/대리상</div>
+        <div style="font-size:7px;font-weight:bold;color:#2b6cb0;margin:2px 0 2px;border-bottom:1px solid #bee3f8;padding-bottom:1px;">🔵 1~2월 합산 (춘절 보정)</div>
+        <ul style="margin-bottom:4px;">
+          <li><b>실질 성장률 +18% 수준:</b> 전년 매출을 역산해 합산 YoY를 구하면 개별 월 기준 86%↔170%의 극단적 진동은 <b>춘절 이동에 의한 착시</b>였음이 명확 — 채널 간 격차도 미미(대리상 118% vs 직영 116%)해서 사실상 양 채널 고른 성장</li>
+        </ul>
 
-    <div style="font-size:7px;font-weight:bold;color:#c05621;margin:2px 0 2px;border-bottom:1px solid #feebc8;padding-bottom:1px;">🟠 핵심 관찰</div>
-    <ul style="margin-bottom:4px;">
-      <li><b>본사 의류 합계 2,083M (YoY 148%):</b> 26S 122%·25F 178%·25S 300%·과시즌 140%로 전반 누적 — 신시즌과 이월 재고가 동시에 증가하는 구조</li>
-      <li><b>대리상 의류 합계 3,514M (YoY 101%):</b> 총량은 전년 수준이나 25F 113%·25S 109%로 이월 재고 비중이 높은 상태</li>
-    </ul>
+        <div style="font-size:7px;font-weight:bold;color:#276749;margin:2px 0 2px;border-bottom:1px solid #c6f6d5;padding-bottom:1px;">🟢 3월 (이벤트 없는 순수 기저 · 플러스 성장 유지)</div>
+        <ul style="margin-bottom:4px;">
+          <li><b>춘절 효과 제외해도 +2% 성장 지속:</b> 이벤트 요인이 사라진 상태에서도 전년比 플러스 — <b>모자 +19%</b>가 성장을 견인하며 ACC 전체 기조 유지</li>
+          <li><b>직영 -2% 소폭 조정 (전반 기조는 성장):</b> 전년 대비 미세 감소 · 가방 -21% 편차 존재 — 구조적 악화보단 채널·카테고리별 편차 관점에서 운영 효율 점검 포인트</li>
+        </ul>
 
-    <div style="font-size:7px;font-weight:bold;color:#9c4221;margin:2px 0 2px;border-bottom:1px solid #fbd38d;padding-bottom:1px;">🔎 리스크 포인트</div>
-    <ul style="margin-bottom:4px;">
-      <li><b>26S 재고 미스매치:</b> 대리상 26S는 88%로 낮아졌지만 본사 26S는 122%로 증가 — 채널 간 재고 불균형 지속 시 추가 할인/이관 부담 가능</li>
-      <li><b>25F·25S 체류 리스크:</b> 대리상 25F 113%, 25S 109%가 유지되면 Q2 신상품 운영 여력 축소 — 발주 통제와 소진 프로모션 병행 필요</li>
-    </ul>
-
-    <div style="font-size:7px;font-weight:bold;color:#276749;margin:2px 0 2px;border-bottom:1px solid #c6f6d5;padding-bottom:1px;">✅ 실행 시사점</div>
-    <ul>
-      <li><b>의류 운영 우선순위:</b> 26S는 채널별 배분 재조정, 25F·25S는 대리상 중심 소진 프로모션으로 분리 대응 — ACC 중심 대응에 의류 관리 축을 추가</li>
-    </ul>
+        <div style="font-size:7px;font-weight:bold;color:#276749;margin:2px 0 2px;border-bottom:1px solid #c6f6d5;padding-bottom:1px;">🟢 결론 — 1Q 성장 기조 확인 · 4월 모멘텀 이어가기</div>
+        <ul>
+          <li><b>1~2월 합산 +18% · 3월 +2% 플러스 유지 — 분기 전반 성장 구간:</b> 춘절 영향을 걷어내도 상반기 기준선 위에서 출발. 3월 가방·직영 편차는 월 단위 자연 변동성 범위로 해석 가능, <b>4월 성장 모멘텀 이어가면 Q2도 안정적 상승 기대</b></li>
+        </ul>
+      </div>
+    </div>
   </div>
 
   <!-- ACC 재고주수 1~3월 추세 (분석용 참고표 — 토글 접힘) -->
