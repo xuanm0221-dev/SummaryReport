@@ -60,8 +60,11 @@
 
 <div class="nav-bar">
   <span class="nav-brand">⚾</span>
+  <select id="monthSelect" class="brand-select" aria-label="월 선택">
+    <option value="2026.03">2026년 3월</option>
+  </select>
   <select id="brandSelect" class="brand-select" aria-label="브랜드 선택">
-    <option value="MLB">MLB China</option>
+    <option value="MLB">MLB</option>
     <option value="KIDS">MLB KIDS</option>
     <option value="DISCOVERY">DISCOVERY</option>
   </select>
@@ -259,7 +262,7 @@
     <div style="display:flex;flex:1;justify-content:space-around;align-items:center;gap:4px;">
       <div style="font-size:8.5px;color:#742a2a;font-weight:700;padding:3px 8px;background:#fff5f5;border-radius:4px;border:1px solid #fed7d7;">
         <span style="background:#fed7d7;color:#742a2a;padding:2px 6px;border-radius:3px;font-weight:800;margin-right:4px;font-size:9px;">⚠️ 실적</span>
-        3월 76% → 4월 <span style="color:#2f855a;font-weight:800;">+22.6%p 반등</span> (YTD <span style="color:#c53030;font-weight:800;">97.6%</span>)
+        3월 76% → 4월 <span style="color:#2f855a;font-weight:800;">98.6% +22.6%p 반등</span> (YTD <span style="color:#c53030;font-weight:800;">97.6%</span>)
       </div>
       <div style="display:flex;flex-direction:column;align-items:center;">
         <span style="font-size:6.5px;color:#4a5568;font-weight:600;">KIDS 합계</span>
@@ -421,9 +424,13 @@
 
           <!-- 그룹 5: 재고 / 할인율 -->
           <tr style="background:#fff5f5;"><td colspan="3" style="font-weight:bold;color:#c53030;font-size:7.5px;padding:3px 5px;">📦 재고 · 할인율</td></tr>
-          <tr><td><b>ACC 재고주수</b></td>
-            <td style="font-size:7px;">57주 → 46주 → 46주 (-11주)</td>
-            <td><span class="badge-up">개선 진행 중</span></td>
+          <tr><td><b>ACC 재고주수 (전체)</b></td>
+            <td style="font-size:7px;">51.7주 → 40.6주 → 56주 (전년 41.1주, +14.9주)</td>
+            <td><span class="badge-down">3월 재악화</span></td>
+          </tr>
+          <tr><td><b>신발 재고주수</b></td>
+            <td style="font-size:7px;">57주 → 46주 → 46주 (개선 진행 중)</td>
+            <td><span class="badge-up">정상화 추세</span></td>
           </tr>
           <tr><td><b>본사 기말재고</b></td>
             <td style="font-size:7px;">220M (130%) → 208M (108%) → 209M (109%)</td>
@@ -666,21 +673,22 @@
     <div style="border:1px solid #cbd5e0;border-radius:4px;padding:8px;background:#fff;">
       <div style="display:flex;justify-content:space-between;align-items:baseline;">
         <span style="font-size:8px;font-weight:bold;color:#4a5568;">📦 ACC 재고주수</span>
-        <span style="font-size:6.5px;color:#2f855a;font-weight:bold;">YoY -11주</span>
+        <span style="font-size:6.5px;color:#c53030;font-weight:bold;">YoY +14.9주</span>
       </div>
-      <div style="font-size:16px;font-weight:800;color:#1a365d;margin:3px 0;">46<span style="font-size:9px;color:#718096;">주</span></div>
-      <div style="font-size:6.5px;color:#718096;margin-bottom:3px;">전년 57주 · 1→2→3월: 57→46→46 (개선 진행 중)</div>
+      <div style="font-size:16px;font-weight:800;color:#1a365d;margin:3px 0;">56<span style="font-size:9px;color:#718096;">주</span></div>
+      <div style="font-size:6.5px;color:#718096;margin-bottom:3px;">전년 41.1주 · 전월 대비 증가</div>
       <div style="display:flex;justify-content:space-between;align-items:center;font-size:6.5px;color:#718096;border-top:1px solid #e2e8f0;padding-top:3px;">
-        <span>아이템별 (전체/전년)</span>
+        <span>아이템별 (전체/전년/대리상/본사)</span>
         <button onclick="var t=document.getElementById('kids-acc-summary'),b=document.getElementById('kids-acc-summary-btn');if(t.style.display==='none'){t.style.display='table';b.textContent='▲ 접기';}else{t.style.display='none';b.textContent='▼ 펼치기';}" id="kids-acc-summary-btn" style="font-size:6.5px;padding:1px 5px;cursor:pointer;background:#edf2f7;border:1px solid #cbd5e0;border-radius:3px;">▼ 펼치기</button>
       </div>
       <table id="kids-acc-summary" style="display:none;font-size:6.5px;margin-top:3px;">
-        <tr><th>아이템</th><th class="num">전체</th><th class="num">전년</th><th class="num">YoY</th></tr>
-        <tr><td>신발</td><td class="num" style="color:#c53030;font-weight:bold;">65.8</td><td class="num">40.5</td><td class="num" style="color:#c53030;">+25.3</td></tr>
-        <tr><td>모자</td><td class="num">46.5</td><td class="num">39.6</td><td class="num">+6.9</td></tr>
-        <tr><td>가방</td><td class="num">40.3</td><td class="num">40.6</td><td class="num" style="color:#2f855a;">-0.3</td></tr>
-        <tr><td>기타</td><td class="num">203.6</td><td class="num">116.4</td><td class="num" style="color:#c53030;">+87.2</td></tr>
+        <tr><th>아이템</th><th class="num">전체</th><th class="num">전년</th><th class="num">대리상</th><th class="num">본사</th></tr>
+        <tr><td>신발</td><td class="num" style="color:#c53030;font-weight:bold;">65.8</td><td class="num">40.5</td><td class="num">58.8</td><td class="num">16.2</td></tr>
+        <tr><td>모자</td><td class="num">46.5</td><td class="num">39.6</td><td class="num">48.7</td><td class="num">8.8</td></tr>
+        <tr><td>가방</td><td class="num">40.3</td><td class="num">40.6</td><td class="num">26.6</td><td class="num">14.0</td></tr>
+        <tr><td>기타</td><td class="num">203.6</td><td class="num">116.4</td><td class="num">264.3</td><td class="num">45.1</td></tr>
       </table>
+      <div style="font-size:6.5px;color:#22543d;background:#f0fff4;border-left:2px solid #68d391;padding:3px 5px;margin-top:3px;">※ 신발: 57주 · 1→2→3월 57→46→46 (개선 진행 중)</div>
     </div>
   </div>
 
@@ -718,19 +726,19 @@
     <div class="kpi-box" style="text-align:left;padding:8px;">
       <div class="kpi-label" style="text-align:center;">당월 점당매출 (3월)</div>
       <div class="kpi-value" style="text-align:center;font-size:13px;">123,800<span style="font-size:9px;color:#718096;font-weight:600;">위안</span> <span style="font-size:9px;color:#c53030;font-weight:600;">YoY 96%</span></div>
-      <div style="font-size:6.5px;color:#718096;text-align:center;margin-top:2px;">전년 128,975 · 101개점 (전년 129)</div>
+      <div style="font-size:6.5px;color:#718096;text-align:center;margin-top:2px;">전년 128,975 · 101개 (전년 129)</div>
       <div style="font-size:6.5px;color:#4a5568;margin-top:4px;border-top:1px solid #e2e8f0;padding-top:3px;">
-        · 기존점 <b>127,483</b> <span style="color:#dd6b20;">99%</span> (88점)<br>
-        · 신규점 <b>98,869</b> <span style="color:#c53030;">77%</span> (13점)
+        · 기존점 <b>127,483</b> <span style="color:#dd6b20;">99%</span> (88개)<br>
+        · 신규점 <b>98,869</b> <span style="color:#c53030;">77%</span> (13개)
       </div>
     </div>
     <div class="kpi-box" style="text-align:left;padding:8px;">
       <div class="kpi-label" style="text-align:center;">YTD 누적 점당매출</div>
       <div class="kpi-value" style="text-align:center;font-size:13px;">219,637<span style="font-size:9px;color:#718096;font-weight:600;">위안</span> <span style="font-size:9px;color:#2f855a;font-weight:600;">YoY 121%</span></div>
-      <div style="font-size:6.5px;color:#718096;text-align:center;margin-top:2px;">전년 182,228 · 104개점 (전년 132)</div>
+      <div style="font-size:6.5px;color:#718096;text-align:center;margin-top:2px;">전년 182,228 · 104개 (전년 132)</div>
       <div style="font-size:6.5px;color:#4a5568;margin-top:4px;border-top:1px solid #e2e8f0;padding-top:3px;">
-        · 기존점 <b>230,325</b> <b style="color:#2f855a;font-size:7.5px;">128%</b> (90점)<br>
-        · 신규점 <b>149,253</b> <b style="color:#c53030;font-size:7.5px;">76%</b> (14점)
+        · 기존점 <b>230,325</b> <b style="color:#2f855a;font-size:7.5px;">128%</b> (90개)<br>
+        · 신규점 <b>149,253</b> <b style="color:#c53030;font-size:7.5px;">76%</b> (14개)
       </div>
     </div>
     <div class="kpi-box" style="text-align:left;padding:8px;background:#fffaf0;border:1px solid #f6ad55;">
@@ -773,6 +781,105 @@
         <td class="num">105</td><td class="num">105</td><td class="num">101</td><td class="num">104</td>
       </tr>
     </table>
+  </div>
+
+  <!-- 4월 Trade Zone (4/15 기준) -->
+  <div class="section" style="margin-top:8px;border:1px solid #cbd5e0;border-radius:4px;padding:8px;background:#fff;">
+    <div style="font-weight:bold;font-size:9px;color:#2d3748;margin-bottom:6px;border-bottom:1px solid #e2e8f0;padding-bottom:4px;">🏬 KIDS 리테일 (대리상 OFF) — Trade Zone 분석 <span style="font-size:7px;font-weight:normal;color:#718096;">(4/15 기준)</span></div>
+
+    <!-- 요약 KPI -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:6px;">
+      <div style="border:1px solid #e2e8f0;border-radius:3px;padding:6px 8px;background:#fafafa;">
+        <div style="font-size:7px;font-weight:bold;color:#4a5568;margin-bottom:3px;">당월 MTD (2026/04/01~04/15)</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:7px;">
+          <div><span style="color:#718096;">누적실적</span> <b>7,836K</b> <span style="color:#c53030;font-weight:bold;">YoY 87.7%</span> (전년 8,936K)</div>
+          <div><span style="color:#718096;">점당매출</span> <b>82K</b> <span style="color:#2f855a;font-weight:bold;">YoY 114.2%</span> (96개)</div>
+          <div><span style="color:#718096;">의류</span> <b>10,453K</b> <span style="color:#dd6b20;">97.4%</span></div>
+          <div><span style="color:#718096;">ACC</span> <b>4,402K</b> <span style="color:#c53030;">90.5%</span></div>
+          <div style="grid-column:span 2;background:#ebf8ff;padding:2px 4px;border-radius:2px;"><span style="color:#2b6cb0;">월말예상</span> <b>159K</b> (진척률 51%)</div>
+        </div>
+      </div>
+      <div style="border:1px solid #e2e8f0;border-radius:3px;padding:6px 8px;background:#fafafa;">
+        <div style="font-size:7px;font-weight:bold;color:#4a5568;margin-bottom:3px;">연간 YTD (2026/01/01~04/15)</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:7px;">
+          <div><span style="color:#718096;">누적실적</span> <b>75,890K</b> <span style="color:#c53030;font-weight:bold;">YoY 94.0%</span> (전년 80,706K)</div>
+          <div><span style="color:#718096;">점당매출</span> <b>186K</b> <span style="color:#2f855a;font-weight:bold;">YoY 120.1%</span> (102개)</div>
+          <div><span style="color:#718096;">의류</span> <b>89,607K</b> <span style="color:#dd6b20;">97.7%</span></div>
+          <div><span style="color:#718096;">ACC</span> <b>40,714K</b> <span style="color:#c53030;">92.6%</span></div>
+          <div style="grid-column:span 2;background:#ebf8ff;padding:2px 4px;border-radius:2px;"><span style="color:#2b6cb0;">연말예상</span> <b>148K</b> (진척률 35%)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trade Zone MTD -->
+    <div style="font-size:7.5px;font-weight:bold;color:#4a5568;margin:6px 0 3px;">📊 Trade Zone — 당월 MTD (4/1~4/15)</div>
+    <table style="font-size:6.5px;">
+      <tr><th>구분</th><th class="num">F1</th><th class="num">F2</th><th class="num">F3</th><th class="num">O1</th><th class="num">O2</th><th class="num">O3</th></tr>
+      <tr><td>점당실적</td><td class="num">123</td><td class="num">71</td><td class="num">57</td><td class="num">100</td><td class="num">88</td><td class="num">47</td></tr>
+      <tr><td>전년</td><td class="num" style="color:#718096;">114</td><td class="num" style="color:#718096;">66</td><td class="num" style="color:#718096;">42</td><td class="num" style="color:#718096;">113</td><td class="num" style="color:#718096;">95</td><td class="num" style="color:#718096;">48</td></tr>
+      <tr><td>YoY</td>
+        <td class="num"><span class="badge-up">107.8%</span></td>
+        <td class="num"><span class="badge-up">107.9%</span></td>
+        <td class="num"><span class="badge-up">136.7%</span></td>
+        <td class="num"><span class="badge-down">88.2%</span></td>
+        <td class="num"><span class="badge-warn">92.8%</span></td>
+        <td class="num"><span class="badge-warn">98.1%</span></td>
+      </tr>
+      <tr><td>매장수</td><td class="num">20</td><td class="num">34</td><td class="num">23</td><td class="num">6</td><td class="num">11</td><td class="num">2</td></tr>
+      <tr><td>증감</td>
+        <td class="num" style="color:#c53030;">-3</td>
+        <td class="num" style="color:#c53030;">-8</td>
+        <td class="num" style="color:#c53030;">-16</td>
+        <td class="num" style="color:#c53030;">-1</td>
+        <td class="num" style="color:#2f855a;">+1</td>
+        <td class="num" style="color:#c53030;">-2</td>
+      </tr>
+      <tr><td>할인율</td><td class="num">10.2%</td><td class="num">9.0%</td><td class="num">10.3%</td><td class="num">39.1%</td><td class="num">23.3%</td><td class="num">4.3%</td></tr>
+      <tr><td>전년비</td>
+        <td class="num" style="color:#c53030;">+3.2%p</td>
+        <td class="num" style="color:#2f855a;">-0.3%p</td>
+        <td class="num" style="color:#2f855a;">-1.3%p</td>
+        <td class="num" style="color:#c53030;">+15.6%p</td>
+        <td class="num" style="color:#2f855a;">-0.6%p</td>
+        <td class="num" style="color:#2f855a;">-27.1%p</td>
+      </tr>
+    </table>
+
+    <!-- Trade Zone YTD -->
+    <div style="font-size:7.5px;font-weight:bold;color:#4a5568;margin:8px 0 3px;">📊 Trade Zone — 연간 YTD (1/1~4/15)</div>
+    <table style="font-size:6.5px;">
+      <tr><th>구분</th><th class="num">F1</th><th class="num">F2</th><th class="num">F3</th><th class="num">O1</th><th class="num">O2</th><th class="num">O3</th></tr>
+      <tr><td>점당실적</td><td class="num">268</td><td class="num">174</td><td class="num">129</td><td class="num">205</td><td class="num">207</td><td class="num">114</td></tr>
+      <tr><td>전년</td><td class="num" style="color:#718096;">235</td><td class="num" style="color:#718096;">152</td><td class="num" style="color:#718096;">100</td><td class="num" style="color:#718096;">236</td><td class="num" style="color:#718096;">180</td><td class="num" style="color:#718096;">101</td></tr>
+      <tr><td>YoY</td>
+        <td class="num"><span class="badge-up">114.4%</span></td>
+        <td class="num"><span class="badge-up">114.5%</span></td>
+        <td class="num"><span class="badge-up">129.9%</span></td>
+        <td class="num"><span class="badge-down">87.1%</span></td>
+        <td class="num"><span class="badge-up">114.8%</span></td>
+        <td class="num"><span class="badge-up">112.2%</span></td>
+      </tr>
+      <tr><td>매장수</td><td class="num">21</td><td class="num">34</td><td class="num">25</td><td class="num">7</td><td class="num">12</td><td class="num">3</td></tr>
+      <tr><td>증감</td>
+        <td class="num" style="color:#c53030;">-3</td>
+        <td class="num" style="color:#c53030;">-10</td>
+        <td class="num" style="color:#c53030;">-17</td>
+        <td class="num">0</td>
+        <td class="num" style="color:#2f855a;">+2</td>
+        <td class="num" style="color:#c53030;">-1</td>
+      </tr>
+      <tr><td>할인율</td><td class="num">8.9%</td><td class="num">9.4%</td><td class="num">12.1%</td><td class="num">35.8%</td><td class="num">28.1%</td><td class="num">29.3%</td></tr>
+      <tr><td>전년비</td>
+        <td class="num" style="color:#c53030;">+0.5%p</td>
+        <td class="num" style="color:#c53030;">+1.0%p</td>
+        <td class="num" style="color:#2f855a;">-0.3%p</td>
+        <td class="num" style="color:#c53030;">+8.5%p</td>
+        <td class="num" style="color:#c53030;">+4.9%p</td>
+        <td class="num" style="color:#c53030;">+0.9%p</td>
+      </tr>
+    </table>
+
+    <div style="font-size:6.5px;color:#718096;margin-top:4px;padding:3px 6px;background:#f7fafc;border-radius:3px;">※ F3 매장 -17개 대폭 감소에도 점당 129.9% 성장 · O1 점당 87.1% 부진 · 매장 총 -29개 (133→102)로 기조 축소 중</div>
   </div>
 
   <!-- ==================== KIDS SECTION 5 ==================== -->
@@ -841,7 +948,646 @@
   </div>
 
   </div><!-- /kids-content -->
-  <div id="discovery-content" class="brand-content" style="display:none;"></div>
+  <div id="discovery-content" class="brand-content" style="display:none;">
+
+  <!-- ==================== DISCOVERY SECTION 1 ==================== -->
+  <div class="page-title">1. Executive Summary - 3월 당월 핵심 KPI <span style="font-size:9px;font-weight:600;color:#4a5568;margin-left:6px;">[대리상 점당매출 YTD: 1월 87% → 2월 101% → 3월 90%]</span></div>
+
+  <!-- 메인 KPI 5종 -->
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #cbd5e0;border-radius:6px;overflow:hidden;box-shadow:0 2px 8px rgba(26,54,93,0.08);margin-bottom:8px;background:#fff;">
+
+    <!-- 1. 리테일 매출 -->
+    <div style="background:#fff;border-top:3px solid #1a365d;padding:10px 10px 9px;border-right:1px solid #e2e8f0;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+        <span style="font-size:7px;font-weight:700;color:#4a5568;letter-spacing:0.4px;text-transform:uppercase;">리테일 매출</span>
+        <span style="width:7px;height:7px;border-radius:50%;background:#38a169;display:inline-block;"></span>
+      </div>
+      <div style="font-size:20px;font-weight:800;color:#1a365d;line-height:1;letter-spacing:-0.5px;">4,443<span style="font-size:10px;font-weight:600;color:#718096;margin-left:2px;">K</span></div>
+      <div style="font-size:7.5px;color:#4a5568;margin-top:4px;font-weight:600;">
+        당월 <span style="color:#2f855a;font-weight:800;">225%</span>&nbsp;·&nbsp;YTD <span style="color:#2f855a;font-weight:800;">293%</span>
+      </div>
+      <table style="border-top:1px solid #e2e8f0;margin-top:7px;padding-top:6px;width:100%;border-collapse:collapse;font-size:7px;">
+        <thead>
+          <tr style="color:#718096;font-weight:600;border-bottom:1px solid #edf2f7;">
+            <th style="text-align:left;padding:2px 0;font-weight:600;">구분</th>
+            <th style="text-align:right;padding:2px 0;font-weight:600;">2월 YTD</th>
+            <th style="text-align:right;padding:2px 0;font-weight:600;">3월 YTD</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f7fafc;">
+            <td style="color:#000;font-weight:600;padding:2px 0;">온라인</td>
+            <td style="color:#4a5568;font-weight:600;text-align:right;padding:2px 0;">233%</td>
+            <td style="color:#1a365d;font-weight:700;text-align:right;padding:2px 0;">207%</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f7fafc;">
+            <td style="color:#000;font-weight:600;padding:2px 0;">오프라인</td>
+            <td style="color:#4a5568;font-weight:600;text-align:right;padding:2px 0;">152%</td>
+            <td style="color:#1a365d;font-weight:700;text-align:right;padding:2px 0;">145%</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f7fafc;">
+            <td style="color:#000;font-weight:600;padding:2px 0;">대리상(EC)</td>
+            <td style="color:#4a5568;font-weight:600;text-align:right;padding:2px 0;">신규</td>
+            <td style="color:#1a365d;font-weight:700;text-align:right;padding:2px 0;">신규</td>
+          </tr>
+          <tr>
+            <td style="color:#000;font-weight:600;padding:2px 0;">대리상(OFF)</td>
+            <td style="color:#4a5568;font-weight:600;text-align:right;padding:2px 0;">483%</td>
+            <td style="color:#1a365d;font-weight:700;text-align:right;padding:2px 0;">430%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. 할인율 -->
+    <div style="background:#fff;border-top:3px solid #1a365d;padding:10px 10px 9px;border-right:1px solid #e2e8f0;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+        <span style="font-size:7px;font-weight:700;color:#4a5568;letter-spacing:0.4px;text-transform:uppercase;">할인율</span>
+        <span style="width:7px;height:7px;border-radius:50%;background:#38a169;display:inline-block;"></span>
+      </div>
+      <div style="font-size:20px;font-weight:800;color:#1a365d;line-height:1;letter-spacing:-0.5px;">6.9<span style="font-size:10px;font-weight:600;color:#718096;margin-left:2px;">%</span></div>
+      <div style="font-size:7.5px;color:#4a5568;margin-top:4px;font-weight:600;">
+        전년비 <span style="color:#2f855a;font-weight:800;">-2.1%p</span> 개선
+      </div>
+      <table style="border-top:1px solid #e2e8f0;margin-top:7px;padding-top:6px;width:100%;border-collapse:collapse;font-size:7px;">
+        <thead>
+          <tr style="color:#718096;font-weight:600;border-bottom:1px solid #edf2f7;">
+            <th style="text-align:left;padding:2px 0;font-weight:600;">구분</th>
+            <th style="text-align:right;padding:2px 0;font-weight:600;">할인율</th>
+            <th style="text-align:right;padding:2px 0;font-weight:600;">전년비</th>
+            <th style="text-align:right;padding:2px 0;font-weight:600;">YTD</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #f7fafc;">
+            <td style="color:#000;font-weight:600;padding:2px 0;">온라인</td>
+            <td style="color:#1a365d;font-weight:700;text-align:right;padding:2px 0;">11.9%</td>
+            <td style="color:#c53030;font-weight:700;text-align:right;padding:2px 0;">+2.2%p</td>
+            <td style="color:#c53030;font-weight:700;text-align:right;padding:2px 0;">+5.3%p</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f7fafc;">
+            <td style="color:#000;font-weight:600;padding:2px 0;">오프라인</td>
+            <td style="color:#1a365d;font-weight:700;text-align:right;padding:2px 0;">10.8%</td>
+            <td style="color:#2f855a;font-weight:700;text-align:right;padding:2px 0;">-7.7%p</td>
+            <td style="color:#2f855a;font-weight:700;text-align:right;padding:2px 0;">-1.6%p</td>
+          </tr>
+          <tr style="border-bottom:1px solid #f7fafc;">
+            <td style="color:#000;font-weight:600;padding:2px 0;">대리상(EC)</td>
+            <td style="color:#1a365d;font-weight:700;text-align:right;padding:2px 0;">0.9%</td>
+            <td style="color:#718096;font-weight:700;text-align:right;padding:2px 0;">-</td>
+            <td style="color:#718096;font-weight:700;text-align:right;padding:2px 0;">-</td>
+          </tr>
+          <tr>
+            <td style="color:#000;font-weight:600;padding:2px 0;">대리상(OFF)</td>
+            <td style="color:#1a365d;font-weight:700;text-align:right;padding:2px 0;">4.4%</td>
+            <td style="color:#c53030;font-weight:700;text-align:right;padding:2px 0;">+1.1%p</td>
+            <td style="color:#c53030;font-weight:700;text-align:right;padding:2px 0;">+1.9%p</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. 점당매출 -->
+    <div style="background:#fff;border-top:3px solid #1a365d;padding:10px 10px 9px;border-right:1px solid #e2e8f0;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+        <span style="font-size:7px;font-weight:700;color:#4a5568;letter-spacing:0.4px;text-transform:uppercase;">점당매출 (대리상)</span>
+        <span style="width:7px;height:7px;border-radius:50%;background:#e53e3e;display:inline-block;"></span>
+      </div>
+      <div style="font-size:20px;font-weight:800;color:#1a365d;line-height:1;letter-spacing:-0.5px;">65<span style="font-size:10px;font-weight:600;color:#718096;margin-left:2px;">%</span></div>
+      <div style="font-size:7.5px;color:#4a5568;margin-top:4px;font-weight:600;">
+        당월 YoY&nbsp;·&nbsp;YTD <span style="color:#c53030;font-weight:800;">90%</span>
+      </div>
+      <div style="border-top:1px solid #e2e8f0;margin-top:7px;padding-top:6px;display:flex;flex-direction:column;gap:3px;">
+        <div style="display:flex;justify-content:space-between;font-size:7px;">
+          <span style="color:#000;font-weight:600;">3월 점당</span><span style="color:#1a365d;font-weight:700;">151,212 · 19개</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:7px;">
+          <span style="color:#000;font-weight:600;">YTD 점당 (19개)</span><span style="color:#1a365d;font-weight:700;">228,332</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. 출고매출 -->
+    <div style="background:#fff;border-top:3px solid #1a365d;padding:10px 10px 9px;border-right:1px solid #e2e8f0;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+        <span style="font-size:7px;font-weight:700;color:#4a5568;letter-spacing:0.4px;text-transform:uppercase;">출고매출</span>
+        <span style="width:7px;height:7px;border-radius:50%;background:#e53e3e;display:inline-block;"></span>
+      </div>
+      <div style="font-size:20px;font-weight:800;color:#1a365d;line-height:1;letter-spacing:-0.5px;">569<span style="font-size:10px;font-weight:600;color:#718096;margin-left:2px;">K</span></div>
+      <div style="font-size:7.5px;color:#4a5568;margin-top:4px;font-weight:600;">
+        당월 <span style="color:#c53030;font-weight:800;">47%</span>&nbsp;·&nbsp;YTD <span style="color:#2f855a;font-weight:800;">104%</span>
+      </div>
+      <div style="border-top:1px solid #e2e8f0;margin-top:7px;padding-top:6px;display:flex;flex-direction:column;gap:3px;">
+        <div style="display:flex;justify-content:space-between;font-size:7px;">
+          <span style="color:#000;font-weight:600;">OFF 대리상</span><span style="color:#1a365d;font-weight:700;">-467% · YTD 42%</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;font-size:7px;">
+          <span style="color:#000;font-weight:600;">EC 대리상</span><span style="color:#1a365d;font-weight:700;">신규 · YTD 신규</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. 재고자산 -->
+    <div style="background:#fff;border-top:3px solid #c53030;padding:10px 10px 9px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:5px;">
+        <span style="font-size:7px;font-weight:700;color:#4a5568;letter-spacing:0.4px;text-transform:uppercase;">재고자산</span>
+        <span style="width:7px;height:7px;border-radius:50%;background:#e53e3e;display:inline-block;"></span>
+      </div>
+      <div style="margin-bottom:6px;">
+        <div style="display:flex;align-items:baseline;gap:4px;">
+          <span style="font-size:6.5px;color:#4a5568;font-weight:700;">본사</span>
+          <span style="font-size:17px;font-weight:800;color:#1a365d;letter-spacing:-0.5px;">534<span style="font-size:10px;font-weight:600;color:#718096;">M</span></span>
+          <span style="font-size:8px;font-weight:800;color:#c53030;">(525%)</span>
+        </div>
+        <div style="font-size:7px;color:#4a5568;margin-top:2px;font-weight:500;">25F 의류 <span style="color:#c53030;font-weight:800;">1,468%</span> · 신발 <span style="color:#c53030;font-weight:800;">334%</span> · 25S <span style="color:#c53030;font-weight:800;">4,656%</span></div>
+      </div>
+      <div style="border-top:1px solid #e2e8f0;padding-top:6px;">
+        <div style="display:flex;align-items:baseline;gap:4px;">
+          <span style="font-size:6.5px;color:#4a5568;font-weight:700;">대리상</span>
+          <span style="font-size:17px;font-weight:800;color:#1a365d;letter-spacing:-0.5px;">54<span style="font-size:10px;font-weight:600;color:#718096;">M</span></span>
+          <span style="font-size:8px;font-weight:800;color:#c53030;">(355%)</span>
+        </div>
+        <div style="font-size:7px;color:#4a5568;margin-top:2px;font-weight:500;">신규 브랜드 · 기초 재고 구축 단계</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4월 서브 KPI (4/15 기준) — DISCOVERY -->
+  <div style="display:flex;align-items:center;gap:0;background:#f7fafc;border:1px solid #e2e8f0;border-radius:5px;padding:6px 10px;margin-bottom:8px;overflow:hidden;">
+    <div style="display:flex;align-items:center;gap:5px;padding-right:10px;border-right:1px solid #cbd5e0;">
+      <span style="font-size:11px;font-weight:800;color:#4a5568;">📅 4/15 기준 · DISCOVERY 리테일(누적)</span>
+    </div>
+    <div style="display:flex;flex:1;justify-content:space-around;align-items:center;gap:4px;">
+      <div style="font-size:8.5px;color:#22543d;font-weight:700;padding:3px 8px;background:#f0fff4;border-radius:4px;border:1px solid #c6f6d5;">
+        <span style="background:#c6f6d5;color:#22543d;padding:2px 6px;border-radius:3px;font-weight:800;margin-right:4px;font-size:9px;">✅ 실적</span>
+        3월 225% → 4월 <span style="color:#2f855a;font-weight:800;">229.3%</span> 유지 (YTD <span style="color:#2b6cb0;font-weight:800;">286.8%</span>)
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;background:#ebf8ff;padding:2px 8px;border-radius:3px;">
+        <span style="font-size:6.5px;color:#2b6cb0;font-weight:700;">DISCOVERY 합계 ▲</span>
+        <span style="font-size:11px;font-weight:800;color:#1a365d;">229.3%</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <span style="font-size:6.5px;color:#4a5568;font-weight:600;">OFF 대리상</span>
+        <span style="font-size:11px;font-weight:800;color:#2f855a;">250.8%</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <span style="font-size:6.5px;color:#4a5568;font-weight:600;">OFF 직영</span>
+        <span style="font-size:11px;font-weight:800;color:#2f855a;">165.4%</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <span style="font-size:6.5px;color:#4a5568;font-weight:600;">ON 대리상</span>
+        <span style="font-size:11px;font-weight:800;color:#718096;">-</span>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;">
+        <span style="font-size:6.5px;color:#4a5568;font-weight:600;">ON 직영</span>
+        <span style="font-size:11px;font-weight:800;color:#2f855a;">180.8%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="box box-dark" style="margin-bottom:6px;">
+    <div style="display:flex;gap:12px;">
+      <div style="flex:1;">
+        <div style="font-size:9px;font-weight:bold;color:#90cdf4;margin-bottom:3px;">📊 1Q 종합 평가 (신규 브랜드)</div>
+        <ul>
+          <li><b>매출 고성장:</b> 리테일 YTD 293% · 4월 4/15 기준 합계 YTD 286.8% — 신규 브랜드 초기 성장 모멘텀 확보</li>
+          <li><b>적자 구조 심화:</b> YTD 영업이익 -28,134K (전년 -14,971K 대비 -13,162K) · 영업이익률 -405.0% — 초기 브랜드 구축 비용 부담 지속</li>
+          <li><b>매출총이익률 -117.7% (YTD):</b> 원가율 156.6%로 정상 구간 이탈 — 매출원가에 평가감 반영 추정, 매입 초기 비용 과중</li>
+          <li><b>재고 급증:</b> 본사 534M (YoY 525%) · 25F 의류 1,468% 급증 — 신규 브랜드 매입 단계 과중</li>
+          <li><b>ACC 재고주수 500.4주:</b> 전년 427.6주 대비 +72.8주 — 재고 회전 정상화까지 시간 필요</li>
+        </ul>
+      </div>
+      <div style="flex:1;">
+        <div style="font-size:9px;font-weight:bold;color:#90cdf4;margin-bottom:3px;">🚀 Q2 핵심 과제 (4~6월)</div>
+        <ul>
+          <li><b>출고 정상화:</b> 3월 출고 47% (당월) 급락 — OFF대리상 출고 -467% 이상치 원인 규명 필요</li>
+          <li><b>적자 구조 개선:</b> 인건비·광고비 효율화 + 매출 확대로 고정비 흡수</li>
+          <li><b>재고 회전 가속:</b> 25F 의류 잔여 재고 소진 집중 · 26S 전환 준비</li>
+          <li><b>직영 수익성 관리:</b> OFF 쇼핑몰 당월 189% 성장 지속 + EC 티몰 활용</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <div class="box box-green">
+        <div class="box-title green">✅ 주요 성과 (3월 당월)</div>
+        <ul>
+          <li class="group-head" style="list-style:none;margin-left:-18px;font-weight:700;color:#2f855a;border-bottom:1px solid #c6f6d5;padding:2px 0;margin-top:2px;">📈 매출 성장</li>
+          <li><b>리테일 YTD 293% 고성장:</b> 6,645K → 19,503K (+12,858K)</li>
+          <li><b>OFF 대리상 리테일 당월 313% · YTD 430%:</b> 최대 채널 폭발 성장</li>
+          <li><b>EC 티몰 당월 145% · YTD 178%:</b> 중국 온라인 플랫폼 안착</li>
+          <li><b>4월 4/15 기준 229.3%:</b> OFF대리상 250.8% 모멘텀 유지</li>
+          <li class="group-head" style="list-style:none;margin-left:-18px;font-weight:700;color:#2f855a;border-bottom:1px solid #c6f6d5;padding:2px 0;margin-top:4px;">💰 수익성 · 비용</li>
+          <li><b>할인율 6.9% (-2.1%p):</b> OFF 쇼핑몰 -7.7%p 대폭 개선</li>
+          <li><b>26S 판매율 5.2% (+1.3%p):</b> 신시즌 전환 시작</li>
+          <li class="group-head" style="list-style:none;margin-left:-18px;font-weight:700;color:#2f855a;border-bottom:1px solid #c6f6d5;padding:2px 0;margin-top:4px;">👜 카테고리</li>
+          <li><b>25S 의류 당월 2,222%:</b> 기저 효과 + 재고 소진 동반</li>
+          <li><b>모자 당월 327% · 가방 377%:</b> ACC 전 카테고리 고성장</li>
+        </ul>
+      </div>
+    </div>
+    <div class="right">
+      <div class="box box-red">
+        <div class="box-title red">⚠️ 주요 이슈 & 리스크 (3월)</div>
+        <ul>
+          <li class="group-head" style="list-style:none;margin-left:-18px;font-weight:700;color:#c53030;border-bottom:1px solid #fed7d7;padding:2px 0;margin-top:2px;">💸 손익</li>
+          <li><b>당월 영업이익 -5,549K (적자확대):</b> 전년 -5,311K → -5,549K · 영업이익률 -1101.0% 극단 악화</li>
+          <li><b>YTD 영업이익 -28,134K:</b> 전년 -14,971K 대비 -13,162K 추가 적자</li>
+          <li><b>YTD 매출총이익 -8,179K (적자전환):</b> 원가율 156.6% (+113.9%p) — 평가감 반영 추정</li>
+          <li><b>영업비(브랜드) YTD 13,081K (121%, +2,242K):</b> 광고비 +1,474K · 전년 대비 비용 증가</li>
+          <li class="group-head" style="list-style:none;margin-left:-18px;font-weight:700;color:#c53030;border-bottom:1px solid #fed7d7;padding:2px 0;margin-top:4px;">📦 재고</li>
+          <li><b>본사 재고 534M (525%):</b> 25F 의류 1,468% · 25S 4,656% · 신발 334% 전 카테고리 급증</li>
+          <li><b>ACC 재고주수 500.4주 (+72.8주):</b> 신발 639.5주 · 기타 649.7주 — 소진 어려움</li>
+          <li class="group-head" style="list-style:none;margin-left:-18px;font-weight:700;color:#c53030;border-bottom:1px solid #fed7d7;padding:2px 0;margin-top:4px;">📉 매출</li>
+          <li><b>대리상 OFF 점당매출 당월 65%:</b> 19개 매장 기준 역성장 — 신규 매장 이행률 저조(신규점 57%)</li>
+          <li><b>출고 매출 당월 47% 급감:</b> OFF대리상 출고 -467% 이상치 — 반품 또는 매출 조정 가능성</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 연속성 진단 (토글) -->
+  <div style="margin-top:8px;">
+      <div class="box" style="background:#f7fafc;border-color:#cbd5e0;">
+        <div class="box-title" style="color:#4a5568;display:flex;justify-content:space-between;align-items:center;">
+          <span>연속성 진단 — 3개월 흐름 요약 (1월 → 2월 → 3월) <span style="font-size:6.5px;font-weight:normal;color:#718096;">※ 참고 수치</span></span>
+          <button onclick="var t=document.getElementById('disc-continuity-body'),b=document.getElementById('disc-continuity-btn');if(t.style.display==='none'){t.style.display='table';b.textContent='▲ 접기';}else{t.style.display='none';b.textContent='▼ 펼치기';}" id="disc-continuity-btn" style="font-size:7px;padding:2px 6px;cursor:pointer;background:#edf2f7;border:1px solid #cbd5e0;border-radius:3px;">▼ 펼치기</button>
+        </div>
+        <table id="disc-continuity-body" style="display:none;">
+          <tr><th style="width:22%;">구분</th><th>1월 → 2월 → 3월</th><th style="width:25%;">평가</th></tr>
+          <tr style="background:#ebf8ff;"><td colspan="3" style="font-weight:bold;color:#2b6cb0;font-size:7.5px;padding:3px 5px;">📈 매출 성장</td></tr>
+          <tr><td><b>리테일 성장</b></td><td style="font-size:7px;">358% → 282% → 225% (YTD 293%)</td><td><span class="badge-up">고성장 유지</span></td></tr>
+          <tr><td><b>출고 성장</b></td><td style="font-size:7px;">127% → 98% → 47% (YTD 104%)</td><td><span class="badge-down">3월 급락</span></td></tr>
+          <tr><td><b>점당매출 (YTD)</b></td><td style="font-size:7px;">87% → 101% → 90%</td><td><span class="badge-warn">변동성 큼</span></td></tr>
+          <tr style="background:#f0fff4;"><td colspan="3" style="font-weight:bold;color:#2f855a;font-size:7.5px;padding:3px 5px;">💰 수익성</td></tr>
+          <tr><td><b>영업이익률(YTD)</b></td><td style="font-size:7px;">-148.6% → -350.5% → -405.0%</td><td><span class="badge-down">적자 확대</span></td></tr>
+          <tr><td><b>매출총이익률(YTD)</b></td><td style="font-size:7px;">1.6% → -137.2% → -117.7%</td><td><span class="badge-down">평가감 영향</span></td></tr>
+          <tr style="background:#fffaf0;"><td colspan="3" style="font-weight:bold;color:#7b341e;font-size:7.5px;padding:3px 5px;">🛒 채널</td></tr>
+          <tr><td><b>OFF 대리상 리테일</b></td><td style="font-size:7px;">412% → 597% → 313% (YTD 430%)</td><td><span class="badge-up">고성장 지속</span></td></tr>
+          <tr><td><b>OFF 쇼핑몰</b></td><td style="font-size:7px;">133% → 189% → 122% (YTD 145%)</td><td><span class="badge-up">안정 성장</span></td></tr>
+          <tr><td><b>EC 티몰</b></td><td style="font-size:7px;">796% → 36% → 145% (YTD 197%)</td><td><span class="badge-warn">변동성 큼</span></td></tr>
+          <tr style="background:#fff5f5;"><td colspan="3" style="font-weight:bold;color:#c53030;font-size:7.5px;padding:3px 5px;">📦 재고 · 할인율</td></tr>
+          <tr><td><b>본사 기말재고</b></td><td style="font-size:7px;">478M → 500M → 534M (YoY 1,029% → 687% → 525%)</td><td><span class="badge-down">지속 증가</span></td></tr>
+          <tr><td><b>ACC 재고주수</b></td><td style="font-size:7px;">353.9주 → 346.4주 → 500.4주</td><td><span class="badge-down">3월 재악화</span></td></tr>
+          <tr><td><b>할인율</b></td><td style="font-size:7px;">10.2% → 8.4% → 6.9%</td><td><span class="badge-up">지속 개선</span></td></tr>
+        </table>
+      </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ==================== DISCOVERY SECTION 2 ==================== -->
+  <div class="page-title">2. 채널별 상세 분석 (3월 당월 / YTD)</div>
+
+  <div class="container" style="margin-bottom:8px;">
+    <div class="left">
+      <div class="box" style="background:#ebf8ff;border-color:#90cdf4;">
+        <div class="box-title" style="color:#2b6cb0;">🔵 신규 브랜드 성장 시그널</div>
+        <ul>
+          <li><b>OFF대리상 폭발 성장:</b> 당월 <b style="color:#276749;">313%</b> · YTD <b style="color:#276749;">430%</b> — 19개 매장 신규 확대 + 초기 런칭 모멘텀</li>
+          <li><b>EC 티몰 당월 145% · YTD 178%:</b> 온라인 플랫폼 조기 안착</li>
+          <li><b>OFF 쇼핑몰 당월 122% · YTD 145%:</b> 직영 채널 견조</li>
+          <li><b>EC 틱톡/JD 신규 진입:</b> 당월 98K 기록 — SNS 채널 확장 초기 단계</li>
+        </ul>
+      </div>
+    </div>
+    <div class="right">
+      <div class="box box-red">
+        <div class="box-title red">🔴 수익성 이슈 (신규 브랜드 구조적)</div>
+        <ul>
+          <li><b>당월 직접이익 -1,297K:</b> 전년 -1,287K → -1,297K (적자확대) · 직접이익률 -257.5%</li>
+          <li><b>OFF 쇼핑몰 직접이익 -808K (적자확대):</b> 임차료 비율 133.9% · 고정비 부담 큼</li>
+          <li><b>EC 티몰 직접이익 -162K (적자축소):</b> 광고비 20% · TP수수료 13% 부담</li>
+          <li><b>OFF 대리상 직접이익 -320K (적자확대):</b> 광고 투자비 반영</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left">
+      <div class="section">
+        <div class="section-title">📦 출고매출 채널별 (3월 당월 / YTD · 단위: 천위안)</div>
+        <table>
+          <tr><th>채널</th><th class="num">당월 매출</th><th class="num">당월YoY</th><th class="num">YTD YoY</th></tr>
+          <tr style="font-weight:bold;background:#f0f4f8;">
+            <td>합계</td><td class="num">569</td><td class="num"><span class="badge-down">47%</span></td><td class="num"><span class="badge-up">104%</span></td>
+          </tr>
+          <tr style="font-weight:bold;background:#fffaf0;">
+            <td>(OFF)대리상</td><td class="num">-768</td><td class="num"><span class="badge-down">-467%</span></td><td class="num"><span class="badge-down">42%</span></td>
+          </tr>
+          <tr style="font-weight:bold;background:#fffaf0;">
+            <td>(EC)대리상</td><td class="num">-171</td><td class="num" style="color:#718096;">신규</td><td class="num" style="color:#718096;">신규</td>
+          </tr>
+          <tr style="font-weight:bold;background:#e6fffa;">
+            <td>(EC)합계</td><td class="num">966</td><td class="num"><span class="badge-up">161%</span></td><td class="num"><span class="badge-up">207%</span></td>
+          </tr>
+          <tr><td style="padding-left:12px;">(EC)티몰</td><td class="num">868</td><td class="num"><span class="badge-up">145%</span></td><td class="num"><span class="badge-up">178%</span></td></tr>
+          <tr><td style="padding-left:12px;">(EC)틱톡/JD</td><td class="num">98</td><td class="num" style="color:#718096;">신규</td><td class="num" style="color:#718096;">신규</td></tr>
+          <tr><td style="padding-left:12px;">(EC)할인몰</td><td class="num">0</td><td class="num" style="color:#718096;">-</td><td class="num" style="color:#718096;">-</td></tr>
+          <tr style="font-weight:bold;background:#fff5f5;">
+            <td>(OFF)합계</td><td class="num">542</td><td class="num"><span class="badge-up">122%</span></td><td class="num"><span class="badge-up">145%</span></td>
+          </tr>
+          <tr><td style="padding-left:12px;">(OFF)쇼핑몰</td><td class="num">542</td><td class="num"><span class="badge-up">122%</span></td><td class="num"><span class="badge-up">145%</span></td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="right">
+      <div class="section">
+        <div class="section-title">🏷️ 할인율 (3월 당월 기준)</div>
+        <table>
+          <tr><th>구분</th><th class="num">당월</th><th class="num">전년비(당월)</th><th class="num">전년비(YTD)</th></tr>
+          <tr style="font-weight:bold;background:#f0f4f8;">
+            <td>전체</td><td class="num">6.9%</td><td class="num"><span class="badge-up">-2.1%p</span></td><td class="num">-</td>
+          </tr>
+          <tbody id="disc-disc-channel" style="display:none;">
+          <tr style="background:#ebf8ff;"><td colspan="4" style="font-weight:bold;color:#2b6cb0;font-size:7px;padding:2px 5px;">🛒 채널별</td></tr>
+          <tr><td>(EC)티몰</td><td class="num">11.8%</td><td class="num"><span class="badge-down">+2.1%p</span></td><td class="num"><span class="badge-down">+5.2%p</span></td></tr>
+          <tr><td>(EC)틱톡/JD</td><td class="num">12.3%</td><td class="num" style="color:#718096;">-</td><td class="num" style="color:#718096;">-</td></tr>
+          <tr><td>(EC)할인몰</td><td class="num">0.0%</td><td class="num" style="color:#718096;">-</td><td class="num" style="color:#718096;">-</td></tr>
+          <tr><td>(EC)합계</td><td class="num">11.9%</td><td class="num"><span class="badge-down">+2.2%p</span></td><td class="num"><span class="badge-down">+5.3%p</span></td></tr>
+          <tr><td>(OFF)쇼핑몰</td><td class="num">10.8%</td><td class="num"><span class="badge-up">-7.7%p</span></td><td class="num"><span class="badge-up">-1.6%p</span></td></tr>
+          <tr><td>(OFF)합계</td><td class="num">10.8%</td><td class="num"><span class="badge-up">-7.7%p</span></td><td class="num"><span class="badge-up">-1.6%p</span></td></tr>
+          <tr><td>(EC)대리상</td><td class="num">0.9%</td><td class="num" style="color:#718096;">-</td><td class="num" style="color:#718096;">-</td></tr>
+          <tr><td>(OFF)대리상</td><td class="num">4.4%</td><td class="num"><span class="badge-down">+1.1%p</span></td><td class="num"><span class="badge-down">+1.9%p</span></td></tr>
+          <tr style="background:#faf5ff;"><td colspan="4" style="font-weight:bold;color:#553c9a;font-size:7px;padding:2px 5px;">👟 아이템별</td></tr>
+          <tr><td>26S 의류</td><td class="num">4.6%</td><td class="num"><span class="badge-up">-4.1%p</span></td><td class="num"><span class="badge-up">-2.8%p</span></td></tr>
+          <tr><td>25F 의류</td><td class="num">12.1%</td><td class="num"><span class="badge-down">+1.4%p</span></td><td class="num"><span class="badge-up">-1.9%p</span></td></tr>
+          <tr><td>25S 의류</td><td class="num">15.2%</td><td class="num"><span class="badge-down">+5.4%p</span></td><td class="num"><span class="badge-down">+7.4%p</span></td></tr>
+          <tr><td>신발</td><td class="num">12.7%</td><td class="num"><span class="badge-down">+3.7%p</span></td><td class="num"><span class="badge-down">+3.7%p</span></td></tr>
+          <tr><td>모자</td><td class="num">6.7%</td><td class="num"><span class="badge-up">-3.0%p</span></td><td class="num"><span class="badge-down">+19.2%p</span></td></tr>
+          <tr><td>가방</td><td class="num">5.7%</td><td class="num"><span class="badge-up">-8.7%p</span></td><td class="num"><span class="badge-up">-3.2%p</span></td></tr>
+          <tr><td>기타</td><td class="num">19.0%</td><td class="num"><span class="badge-down">+2.3%p</span></td><td class="num"><span class="badge-down">+3.3%p</span></td></tr>
+          </tbody>
+        </table>
+        <div style="text-align:right;margin-top:3px;"><button onclick="var t=document.getElementById('disc-disc-channel'),b=document.getElementById('disc-disc-channel-btn');if(t.style.display==='none'){t.style.display='table-row-group';b.textContent='▲ 채널·아이템 접기';}else{t.style.display='none';b.textContent='▼ 채널·아이템 펼치기';}" id="disc-disc-channel-btn" style="font-size:7px;padding:2px 6px;cursor:pointer;background:#edf2f7;border:1px solid #cbd5e0;border-radius:3px;">▼ 채널·아이템 펼치기</button></div>
+      </div>
+
+      <!-- 리테일매출 아이템별 3월 -->
+      <div class="section" style="margin-top:6px;">
+        <div class="section-title" style="display:flex;justify-content:space-between;align-items:center;">
+          <span>🛒 리테일매출 아이템별 (3월 당월)</span>
+          <button onclick="var t=document.getElementById('disc-retail-items'),b=document.getElementById('disc-retail-items-btn');if(t.style.display==='none'){t.style.display='block';b.textContent='▲ 접기';}else{t.style.display='none';b.textContent='▼ 펼치기';}" id="disc-retail-items-btn" style="font-size:7px;padding:2px 6px;cursor:pointer;background:#edf2f7;border:1px solid #cbd5e0;border-radius:3px;">▼ 펼치기</button>
+        </div>
+        <div id="disc-retail-items" style="display:none;">
+          <table>
+            <tr><th>아이템</th><th class="num">당월 매출</th><th class="num">당월YoY</th><th class="num">YTD YoY</th></tr>
+            <tr><td>26S 의류</td><td class="num">3,199</td><td class="num"><span class="badge-up">199%</span></td><td class="num"><span class="badge-up">186%</span></td></tr>
+            <tr><td>25F 의류</td><td class="num">594</td><td class="num"><span class="badge-up">269%</span></td><td class="num"><span class="badge-up">388%</span></td></tr>
+            <tr><td>25S 의류</td><td class="num">296</td><td class="num"><span class="badge-up">2,222%</span></td><td class="num"><span class="badge-up">1,272%</span></td></tr>
+            <tr><td>과시즌 의류</td><td class="num">45</td><td class="num" style="color:#718096;">-</td><td class="num" style="color:#718096;">-</td></tr>
+            <tr><td>신발</td><td class="num">134</td><td class="num"><span class="badge-up">165%</span></td><td class="num"><span class="badge-up">147%</span></td></tr>
+            <tr><td>모자</td><td class="num">110</td><td class="num"><span class="badge-up">327%</span></td><td class="num"><span class="badge-up">417%</span></td></tr>
+            <tr><td>가방</td><td class="num">60</td><td class="num"><span class="badge-up">377%</span></td><td class="num"><span class="badge-up">230%</span></td></tr>
+            <tr><td>기타</td><td class="num">7</td><td class="num"><span class="badge-up">414%</span></td><td class="num"><span class="badge-up">605%</span></td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ==================== DISCOVERY SECTION 3 ==================== -->
+  <div class="page-title">3. 재고 / 매출 연동 분석</div>
+
+  <div style="font-size:10px;font-weight:bold;color:#1a365d;margin:10px 0 6px 0;border-left:3px solid #1a365d;padding-left:6px;">3-1. 당월 분석</div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:6px;margin-bottom:8px;">
+    <div style="border:1px solid #cbd5e0;border-radius:4px;padding:8px;background:#fff;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <span style="font-size:8px;font-weight:bold;color:#4a5568;">🏢 (중국본사) 기말재고</span>
+        <span style="font-size:6.5px;color:#c53030;font-weight:bold;">YoY 525%</span>
+      </div>
+      <div style="font-size:16px;font-weight:800;color:#1a365d;margin:3px 0;">534<span style="font-size:9px;color:#718096;">M</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;font-size:6.5px;color:#718096;border-top:1px solid #e2e8f0;padding-top:3px;">
+        <span>아이템별 상세</span>
+        <button onclick="var t=document.getElementById('disc-hq-inv'),b=document.getElementById('disc-hq-inv-btn');if(t.style.display==='none'){t.style.display='table';b.textContent='▲ 접기';}else{t.style.display='none';b.textContent='▼ 펼치기';}" id="disc-hq-inv-btn" style="font-size:6.5px;padding:1px 5px;cursor:pointer;background:#edf2f7;border:1px solid #cbd5e0;border-radius:3px;">▼ 펼치기</button>
+      </div>
+      <table id="disc-hq-inv" style="display:none;font-size:6.5px;margin-top:3px;">
+        <tr><th>아이템</th><th class="num">전년</th><th class="num">당년</th><th class="num">YoY</th></tr>
+        <tr><td>26S 의류</td><td class="num">64</td><td class="num">64</td><td class="num">99%</td></tr>
+        <tr><td>25F 의류</td><td class="num">23</td><td class="num">340</td><td class="num" style="color:#c53030;font-weight:bold;">1,468%</td></tr>
+        <tr><td>25S 의류</td><td class="num">2</td><td class="num">73</td><td class="num" style="color:#c53030;font-weight:bold;">4,656%</td></tr>
+        <tr><td>과시즌 의류</td><td class="num">0</td><td class="num">24</td><td class="num" style="color:#718096;">-</td></tr>
+        <tr><td>신발</td><td class="num">6</td><td class="num">19</td><td class="num" style="color:#c53030;">334%</td></tr>
+        <tr><td>모자</td><td class="num">3</td><td class="num">7</td><td class="num">216%</td></tr>
+        <tr><td>가방</td><td class="num">3</td><td class="num">6</td><td class="num">194%</td></tr>
+        <tr><td>기타</td><td class="num">1</td><td class="num">1</td><td class="num">200%</td></tr>
+      </table>
+    </div>
+
+    <div style="border:1px solid #cbd5e0;border-radius:4px;padding:8px;background:#fff;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <span style="font-size:8px;font-weight:bold;color:#4a5568;">🏬 (대리상) 재고</span>
+        <span style="font-size:6.5px;color:#c53030;font-weight:bold;">YoY 355%</span>
+      </div>
+      <div style="font-size:16px;font-weight:800;color:#1a365d;margin:3px 0;">54<span style="font-size:9px;color:#718096;">M</span></div>
+      <div style="font-size:6.5px;color:#718096;margin-top:4px;border-top:1px solid #e2e8f0;padding-top:3px;">신규 브랜드 · 기초 재고 구축 단계</div>
+    </div>
+
+    <div style="border:1px solid #cbd5e0;border-radius:4px;padding:8px;background:#fff;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <span style="font-size:8px;font-weight:bold;color:#4a5568;">📈 당시즌 판매율 (26S 의류)</span>
+        <span style="font-size:6.5px;color:#2f855a;font-weight:bold;">YoY +1.3%p</span>
+      </div>
+      <div style="font-size:16px;font-weight:800;color:#1a365d;margin:3px 0;">5.2<span style="font-size:9px;color:#718096;">%</span></div>
+      <div style="font-size:6.5px;color:#718096;margin-bottom:3px;">전년 3.9% · 발주 YoY 134% · 판매 YoY 179%</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;font-size:6.5px;color:#718096;border-top:1px solid #e2e8f0;padding-top:3px;">
+        <span>TOP5 아이템</span>
+        <button onclick="var t=document.getElementById('disc-sell-thru'),b=document.getElementById('disc-sell-thru-btn');if(t.style.display==='none'){t.style.display='table';b.textContent='▲ 접기';}else{t.style.display='none';b.textContent='▼ 펼치기';}" id="disc-sell-thru-btn" style="font-size:6.5px;padding:1px 5px;cursor:pointer;background:#edf2f7;border:1px solid #cbd5e0;border-radius:3px;">▼ 펼치기</button>
+      </div>
+      <table id="disc-sell-thru" style="display:none;font-size:6.5px;margin-top:3px;">
+        <tr><th>아이템</th><th class="num">판매율</th><th class="num">전년</th><th class="num">판매YoY</th><th class="num">발주YoY</th></tr>
+        <tr><td>방풍자켓</td><td class="num">7.8%</td><td class="num">8.5%</td><td class="num">135%</td><td class="num">124%</td></tr>
+        <tr><td>팬츠</td><td class="num">3.9%</td><td class="num">3.2%</td><td class="num">149%</td><td class="num">181%</td></tr>
+        <tr><td>패딩</td><td class="num">33.7%</td><td class="num">36.6%</td><td class="num">310%</td><td class="num">285%</td></tr>
+        <tr><td>점퍼</td><td class="num">13.0%</td><td class="num">0.0%</td><td class="num">-</td><td class="num">-</td></tr>
+        <tr><td>긴팔티셔츠</td><td class="num">15.3%</td><td class="num">12.2%</td><td class="num">243%</td><td class="num">304%</td></tr>
+      </table>
+    </div>
+
+    <div style="border:1px solid #cbd5e0;border-radius:4px;padding:8px;background:#fff;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <span style="font-size:8px;font-weight:bold;color:#4a5568;">📦 ACC 재고주수</span>
+        <span style="font-size:6.5px;color:#c53030;font-weight:bold;">YoY +72.8주</span>
+      </div>
+      <div style="font-size:16px;font-weight:800;color:#1a365d;margin:3px 0;">500.4<span style="font-size:9px;color:#718096;">주</span></div>
+      <div style="font-size:6.5px;color:#718096;margin-bottom:3px;">전년 427.6주 · 1→2→3월: 354 → 346 → 500</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;font-size:6.5px;color:#718096;border-top:1px solid #e2e8f0;padding-top:3px;">
+        <span>아이템별 (전체/전년/대리상/본사)</span>
+        <button onclick="var t=document.getElementById('disc-acc-summary'),b=document.getElementById('disc-acc-summary-btn');if(t.style.display==='none'){t.style.display='table';b.textContent='▲ 접기';}else{t.style.display='none';b.textContent='▼ 펼치기';}" id="disc-acc-summary-btn" style="font-size:6.5px;padding:1px 5px;cursor:pointer;background:#edf2f7;border:1px solid #cbd5e0;border-radius:3px;">▼ 펼치기</button>
+      </div>
+      <table id="disc-acc-summary" style="display:none;font-size:6.5px;margin-top:3px;">
+        <tr><th>아이템</th><th class="num">전체</th><th class="num">전년</th><th class="num">대리상</th><th class="num">본사</th></tr>
+        <tr><td>신발</td><td class="num" style="color:#c53030;font-weight:bold;">639.5</td><td class="num">333.6</td><td class="num">222.7</td><td class="num">525.6</td></tr>
+        <tr><td>모자</td><td class="num">299.4</td><td class="num">407.7</td><td class="num">72.4</td><td class="num">245.4</td></tr>
+        <tr><td>가방</td><td class="num">517.8</td><td class="num">842.6</td><td class="num">115.5</td><td class="num">426.9</td></tr>
+        <tr><td>기타</td><td class="num">649.7</td><td class="num">1,147.9</td><td class="num">423.2</td><td class="num">510.4</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 3-1 분석 박스 -->
+  <div class="container" style="margin-bottom:8px;">
+    <div class="left">
+      <div class="box" style="background:#fff5f5;border-color:#fc8181;">
+        <div class="box-title red">⚠️ 재고 주의 신호</div>
+        <ul>
+          <li><b>본사 25F 의류 1,468% (23→340M):</b> F 시즌 과잉 매입 — 연내 소진 매우 어려움</li>
+          <li><b>본사 25S 4,656% (2→73M):</b> 신규 브랜드 초기 매입 집중 · 시즌 말 재고 리스크</li>
+          <li><b>ACC 재고주수 500.4주:</b> 신발 639.5주 · 기타 649.7주 — 소진 속도 매우 느림</li>
+          <li><b>대리상 재고 54M (355%):</b> 기저 낮으나 신규 확대 단계에서 집중</li>
+        </ul>
+      </div>
+    </div>
+    <div class="right">
+      <div class="box" style="background:#f0fff4;border-color:#68d391;">
+        <div class="box-title green">✅ 재고 긍정 신호</div>
+        <ul>
+          <li><b>26S 재고 64M (99%):</b> 전년 동월 수준 유지 — 신시즌 매입 정상</li>
+          <li><b>판매율 5.2% (+1.3%p):</b> 신시즌 판매 효율 소폭 개선</li>
+          <li><b>모자 299.4주 (전년 407.7주):</b> 4개월 이상 단축</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ==================== DISCOVERY SECTION 4 ==================== -->
+  <div class="page-title">4. 대리상(OFF) 점당매출 분석</div>
+
+  <div class="kpi-grid" style="grid-template-columns: 1fr 1fr 1fr 1.3fr;">
+    <div class="kpi-box" style="text-align:left;padding:8px;">
+      <div class="kpi-label" style="text-align:center;">당월 점당매출 (3월)</div>
+      <div class="kpi-value" style="text-align:center;font-size:13px;">151,212<span style="font-size:9px;color:#718096;font-weight:600;">위안</span> <span style="font-size:9px;color:#c53030;font-weight:600;">YoY 65%</span></div>
+      <div style="font-size:6.5px;color:#718096;text-align:center;margin-top:2px;">전년 233,519 · 19개 (전년 4개)</div>
+      <div style="font-size:6.5px;color:#4a5568;margin-top:4px;border-top:1px solid #e2e8f0;padding-top:3px;">
+        · 기존점 <b>219,708</b> <span style="color:#dd6b20;">100%</span> (4개)<br>
+        · 신규점 <b>132,946</b> <span style="color:#c53030;">57%</span> (15개)
+      </div>
+    </div>
+    <div class="kpi-box" style="text-align:left;padding:8px;">
+      <div class="kpi-label" style="text-align:center;">YTD 누적 점당매출</div>
+      <div class="kpi-value" style="text-align:center;font-size:13px;">228,332<span style="font-size:9px;color:#718096;font-weight:600;">위안</span> <span style="font-size:9px;color:#c53030;font-weight:600;">YoY 90%</span></div>
+      <div style="font-size:6.5px;color:#718096;text-align:center;margin-top:2px;">전년 253,995 · 19개 (전년 4개)</div>
+      <div style="font-size:6.5px;color:#4a5568;margin-top:4px;border-top:1px solid #e2e8f0;padding-top:3px;">
+        · 기존점 <b>310,932</b> <b style="color:#dd6b20;font-size:7.5px;">100%</b> (4개)<br>
+        · 신규점 <b>206,305</b> <b style="color:#c53030;font-size:7.5px;">81%</b> (15개)
+      </div>
+    </div>
+    <div class="kpi-box" style="text-align:left;padding:8px;background:#fffaf0;border:1px solid #f6ad55;">
+      <div class="kpi-label" style="text-align:center;color:#7b341e;">4월 리테일 (4/15 기준)</div>
+      <div class="kpi-value" style="text-align:center;font-size:13px;color:#7b341e;">229.3%<span style="font-size:9px;color:#2f855a;font-weight:600;margin-left:6px;">(합계 YoY)</span></div>
+      <div style="font-size:6.5px;color:#7b341e;text-align:center;margin-top:2px;">합계 MTD 1,757K / YTD 21,258K (286.8%)</div>
+      <div style="font-size:6.5px;color:#7b341e;margin-top:4px;border-top:1px solid #f6ad55;padding-top:3px;">
+        · OFF대리상 250.8% · OFF직영 165.4%<br>
+        · ON직영 180.8% · ON대리상 YoY-
+      </div>
+    </div>
+    <div class="kpi-box" style="text-align:left;padding:8px;background:#fefcbf;border:1px solid #ecc94b;">
+      <div class="kpi-label" style="text-align:center;color:#975a16;font-weight:bold;">📋 종합 시사점</div>
+      <ul style="font-size:6.5px;color:#744210;margin-top:4px;padding-left:10px;line-height:1.35;">
+        <li><b>매장수 4개 → 19개 (+15):</b> 신규 점포 급속 확대 단계</li>
+        <li><b>신규점 YTD 81% 저조:</b> 초기 매장 안착까지 시간 필요</li>
+        <li><b>기존점 100% 유지:</b> 확장 전 매장 안정 운영</li>
+        <li><b>당월 65% 일시 하락:</b> 신규점 이행률 개선이 관건</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 월별 추이 -->
+  <div class="section" style="margin-top:8px;border:1px solid #cbd5e0;border-radius:4px;padding:8px;background:#fff;">
+    <div style="font-weight:bold;font-size:9px;color:#2d3748;margin-bottom:6px;border-bottom:1px solid #e2e8f0;padding-bottom:4px;">월별 점당매출 추이 (1~3월)</div>
+    <table>
+      <tr><th>구분</th><th class="num">1월</th><th class="num">2월</th><th class="num">3월</th><th class="num">YTD</th></tr>
+      <tr style="font-weight:bold;background:#f0f4f8;">
+        <td>당월 점당매출</td><td class="num">283,838</td><td class="num">249,945</td><td class="num">151,212</td><td class="num">228,332</td>
+      </tr>
+      <tr>
+        <td>당월 YoY</td>
+        <td class="num"><span class="badge-down">87%</span></td>
+        <td class="num"><span class="badge-up">125%</span></td>
+        <td class="num"><span class="badge-down">65%</span></td>
+        <td class="num"><span class="badge-warn">90%</span></td>
+      </tr>
+      <tr>
+        <td>매장수</td>
+        <td class="num">19</td><td class="num">19</td><td class="num">19</td><td class="num">19</td>
+      </tr>
+    </table>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ==================== DISCOVERY SECTION 5 ==================== -->
+  <div class="page-title">5. 손익 분석 (3월 당월 / YTD)</div>
+
+  <div style="font-size:10px;font-weight:bold;color:#1a365d;margin:10px 0 6px 0;border-left:3px solid #1a365d;padding-left:6px;">5-1. DISCOVERY</div>
+
+  <div class="container">
+    <div class="left">
+      <div class="section">
+        <div class="section-title">📊 P&L 요약 (단위: 천위안)</div>
+        <table>
+          <tr><th>항목</th><th class="num">당월 PY</th><th class="num">당월 CY</th><th class="num">당월YoY</th><th class="num">YTD YoY</th></tr>
+          <tr><td>리테일</td><td class="num">1,977</td><td class="num">4,443</td><td class="num"><span class="badge-up">225%</span></td><td class="num"><span class="badge-up">293%</span></td></tr>
+          <tr><td>TAG</td><td class="num">1,571</td><td class="num" style="color:#c53030;">-167</td><td class="num"><span class="badge-down">적자전환</span></td><td class="num"><span class="badge-warn">84%</span></td></tr>
+          <tr><td>실판(V+)</td><td class="num">1,220</td><td class="num">569</td><td class="num"><span class="badge-down">47%</span></td><td class="num"><span class="badge-up">104%</span></td></tr>
+          <tr><td>매출원가</td><td class="num">1,214</td><td class="num" style="color:#c53030;">-160</td><td class="num"><span class="badge-down">적자전환</span></td><td class="num"><span class="badge-down">231%</span></td></tr>
+          <tr><td>원가율(Tag)</td><td class="num">41.7%</td><td class="num" style="color:#c53030;">108.3%</td><td class="num"><span class="badge-down">+66.6%p</span></td><td class="num"><span class="badge-down">+113.9%p</span></td></tr>
+          <tr style="font-weight:bold;background:#fff5f5;"><td>매출총이익</td><td class="num" style="color:#c53030;">-135</td><td class="num">664</td><td class="num"><span class="badge-up">흑자전환</span></td><td class="num"><span class="badge-down">적자전환</span></td></tr>
+          <tr><td>매출총이익률</td><td class="num" style="color:#c53030;">-12.5%</td><td class="num">131.8%</td><td class="num"><span class="badge-up">흑자전환</span></td><td class="num"><span class="badge-down">-117.7%</span></td></tr>
+          <tr><td>직접비</td><td class="num">1,152</td><td class="num">1,962</td><td class="num"><span class="badge-down">170%</span></td><td class="num"><span class="badge-down">161%</span></td></tr>
+          <tr style="font-weight:bold;background:#fff5f5;"><td>직접이익</td><td class="num" style="color:#c53030;">-1,287</td><td class="num" style="color:#c53030;">-1,297</td><td class="num"><span class="badge-down">적자확대</span></td><td class="num"><span class="badge-down">적자확대</span></td></tr>
+          <tr><td>직접이익률</td><td class="num" style="color:#c53030;">-119.2%</td><td class="num" style="color:#c53030;">-257.5%</td><td class="num"><span class="badge-down">-138.3%p</span></td><td class="num"><span class="badge-down">-154.9%p</span></td></tr>
+          <tr><td>영업비</td><td class="num">4,024</td><td class="num">4,251</td><td class="num"><span class="badge-down">106%</span></td><td class="num"><span class="badge-down">121%</span></td></tr>
+          <tr style="font-weight:bold;background:#fff5f5;"><td>영업이익</td><td class="num" style="color:#c53030;">-5,311</td><td class="num" style="color:#c53030;">-5,549</td><td class="num"><span class="badge-down">적자확대</span></td><td class="num"><span class="badge-down">적자확대</span></td></tr>
+          <tr><td>영업이익률</td><td class="num" style="color:#c53030;">-491.9%</td><td class="num" style="color:#c53030;">-1101.0%</td><td class="num"><span class="badge-down">-609.1%p</span></td><td class="num"><span class="badge-down">-181.2%p</span></td></tr>
+        </table>
+        <div style="font-size:6.5px;color:#718096;margin-top:3px;">※ YTD 영업이익 -28,134K · 영업이익률 -405.0% (전년 -223.8% 대비 -181.2%p) — 신규 브랜드 구축 비용 집중</div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="section">
+        <div class="section-title">📊 채널별 직접이익 비교 (3월 당월)</div>
+        <table>
+          <tr><th>채널</th><th class="num">리테일</th><th class="num">YoY</th><th class="num">직접이익</th><th class="num">직접이익률</th></tr>
+          <tr style="font-weight:bold;background:#f0f4f8;"><td>합계</td><td class="num">4,443</td><td class="num"><span class="badge-up">225%</span></td><td class="num" style="color:#c53030;">-1,297</td><td class="num" style="color:#c53030;">-257.5%</td></tr>
+          <tr><td>(EC)합계</td><td class="num">966</td><td class="num"><span class="badge-up">161%</span></td><td class="num" style="color:#c53030;">-162</td><td class="num" style="color:#c53030;">-19.0% <span class="badge-up">적자축소</span></td></tr>
+          <tr><td>(OFF)직영</td><td class="num">542</td><td class="num"><span class="badge-up">122%</span></td><td class="num" style="color:#c53030;">-808</td><td class="num" style="color:#c53030;">-168.6% <span class="badge-down">적자확대</span></td></tr>
+          <tr><td>(EC)대리상</td><td class="num">16</td><td class="num" style="color:#718096;">신규</td><td class="num" style="color:#c53030;">-8</td><td class="num">5.1%</td></tr>
+          <tr><td>(OFF)대리상</td><td class="num">2,919</td><td class="num"><span class="badge-up">313%</span></td><td class="num" style="color:#c53030;">-320</td><td class="num" style="color:#c53030;">47.0% <span class="badge-up">흑자전환</span></td></tr>
+        </table>
+        <div style="font-size:6.5px;color:#718096;margin-top:3px;">※ OFF 쇼핑몰 임차료 133.9% 비율 · 고정비 부담 최대 / OFF대리상 매출 급성장 + 수익성 개선</div>
+      </div>
+
+      <div class="box box-green" style="margin-top:6px;">
+        <div class="box-title green">✅ 손익 핵심 성과</div>
+        <ul>
+          <li><b>YTD 매출 19,503K (293%):</b> 신규 브랜드 리테일 고성장</li>
+          <li><b>당월 매출총이익 흑자전환 664K:</b> 전년 -135K → +664K</li>
+          <li><b>OFF대리상 직접이익률 47.0% 흑자전환:</b> 매출 급성장으로 수익구조 전환</li>
+          <li><b>할인율 6.9% (-2.1%p):</b> 수익 체질 개선 시그널</li>
+        </ul>
+      </div>
+
+      <div class="box box-red" style="margin-top:6px;">
+        <div class="box-title red">⚠️ 손익 이슈</div>
+        <ul>
+          <li><b>YTD 영업이익 -28,134K · 영업이익률 -405.0%:</b> 적자 구조 심화 — 매출 규모 대비 비용 과중</li>
+          <li><b>YTD 원가율 156.6% (+113.9%p):</b> 평가감 가능성 — 재고 자산 현실화</li>
+          <li><b>영업비 YTD 13,081K (121%):</b> 광고비 +1,474K · 지속 투자 구간</li>
+          <li><b>OFF 쇼핑몰 -808K 직접이익 적자확대:</b> 임차료 고정비 부담 해소 필요</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /discovery-content -->
 
   <!-- MLB 공용 컨텐츠 (1~5-1) -->
   <div id="mlb-shared" class="brand-content">
@@ -955,7 +1701,7 @@
       </div>
       <div style="border-top:1px solid #e2e8f0;margin-top:7px;padding-top:6px;display:flex;flex-direction:column;gap:3px;">
         <div style="display:flex;justify-content:space-between;font-size:7px;">
-          <span style="color:#000;font-weight:600;">3월 점당</span><span style="color:#1a365d;font-weight:700;">502K · 901점</span>
+          <span style="color:#000;font-weight:600;">3월 점당</span><span style="color:#1a365d;font-weight:700;">502K · 901개</span>
         </div>
         <div style="display:flex;justify-content:space-between;font-size:7px;background:#edf2f7;padding:2px 4px;border-radius:3px;">
           <span style="color:#000;font-weight:600;">4월 월환산 (4/13)</span><span style="color:#2f855a;font-weight:800;">105.4%</span>
@@ -1008,15 +1754,15 @@
     </div>
   </div>
 
-  <!-- 4월 서브 KPI (4/14 기준) — 심플 버전 -->
+  <!-- 4월 서브 KPI (4/15 기준) — 심플 버전 -->
   <div style="display:flex;align-items:center;gap:0;background:#f7fafc;border:1px solid #e2e8f0;border-radius:5px;padding:6px 10px;margin-bottom:8px;overflow:hidden;">
     <div style="display:flex;align-items:center;gap:5px;padding-right:10px;border-right:1px solid #cbd5e0;">
-      <span style="font-size:11px;font-weight:800;color:#4a5568;">📅 4/14 기준 · MLB 리테일(누적)</span>
+      <span style="font-size:11px;font-weight:800;color:#4a5568;">📅 4/15 기준 · MLB 리테일(누적)</span>
     </div>
     <div style="display:flex;flex:1;justify-content:space-around;align-items:center;gap:4px;">
       <div style="font-size:8.5px;color:#22543d;font-weight:700;padding:3px 8px;background:#f0fff4;border-radius:4px;border:1px solid #c6f6d5;">
         <span style="background:#c6f6d5;color:#22543d;padding:2px 6px;border-radius:3px;font-weight:800;margin-right:4px;font-size:9px;">✅ 실적</span>
-        3월 97% → 4월 <span style="color:#2f855a;font-weight:800;">+7%p 반등</span> (YTD <span style="color:#2b6cb0;font-weight:800;">111.0%</span>)
+        3월 97% → 4월 <span style="color:#2f855a;font-weight:800;">102% +5%p 반등</span> (YTD <span style="color:#2b6cb0;font-weight:800;">111.0%</span>)
       </div>
       <div style="display:flex;flex-direction:column;align-items:center;">
         <span style="font-size:6.5px;color:#4a5568;font-weight:600;">MLB 합계</span>
@@ -1077,7 +1823,7 @@
           <li><b>OFF대리상 직접이익 45,024K (16.1%, +8.3%p):</b> 전체 이익의 70% 기여</li>
           <li><b>EC 틱톡/JD 168%:</b> 리테일·출고 동반 고성장 · 3개월 연속 가속(163%→138%→168%) · YTD 158%</li>
           <li><b>OFF대리상 출고 108%, YTD 120%:</b> 가장 큰 채널 안정적 성장 유지</li>
-          <li><b>점당매출 YTD 728,155K (116%, 902개점):</b> 기존점 115% · 신규점 121% · 전 등급 성장</li>
+          <li><b>점당매출 YTD 728,155K (116%, 902개):</b> 기존점 115% · 신규점 121% · 전 등급 성장</li>
           <li class="group-head" style="list-style:none;margin-left:-18px;font-weight:700;color:#2f855a;border-bottom:1px solid #c6f6d5;padding:2px 0;margin-top:4px;">👕 카테고리 (모자 · 신발 · 의류)</li>
           <li><b>신발 리테일 YTD 110%:</b> 3개월 연속 성장</li>
           <li><b>모자 리테일 119% (YTD 132%):</b> ACC 성장 핵심 동력 확립</li>
@@ -1855,19 +2601,19 @@
     <div class="kpi-box" style="text-align:left;padding:8px;">
       <div class="kpi-label" style="text-align:center;">당월 점당매출 (3월)</div>
       <div class="kpi-value" style="text-align:center;font-size:13px;">502,323<span style="font-size:9px;color:#718096;font-weight:600;">위안</span> <span style="font-size:9px;color:#c53030;font-weight:600;">YoY 98%</span></div>
-      <div style="font-size:6.5px;color:#718096;text-align:center;margin-top:2px;">전년 514,858 · 901개점 (전년 904)</div>
+      <div style="font-size:6.5px;color:#718096;text-align:center;margin-top:2px;">전년 514,858 · 901개 (전년 904)</div>
       <div style="font-size:6.5px;color:#4a5568;margin-top:4px;border-top:1px solid #e2e8f0;padding-top:3px;">
-        · 기존점 <b>503,644</b> <span style="color:#c53030;">97%</span> (849점)<br>
-        · 신규점 <b>480,753</b> <span style="color:#dd6b20;">100%</span> (52점)
+        · 기존점 <b>503,644</b> <span style="color:#c53030;">97%</span> (849개)<br>
+        · 신규점 <b>480,753</b> <span style="color:#dd6b20;">100%</span> (52개)
       </div>
     </div>
     <div class="kpi-box" style="text-align:left;padding:8px;">
       <div class="kpi-label" style="text-align:center;">YTD 누적 점당매출</div>
       <div class="kpi-value" style="text-align:center;font-size:13px;">728,155<span style="font-size:9px;color:#718096;font-weight:600;">위안</span> <span style="font-size:9px;color:#2f855a;font-weight:600;">YoY 116%</span></div>
-      <div style="font-size:6.5px;color:#718096;text-align:center;margin-top:2px;">전년 630,225 · 902개점 (전년 909)</div>
+      <div style="font-size:6.5px;color:#718096;text-align:center;margin-top:2px;">전년 630,225 · 902개 (전년 909)</div>
       <div style="font-size:6.5px;color:#4a5568;margin-top:4px;border-top:1px solid #e2e8f0;padding-top:3px;">
-        · 기존점 <b>728,798</b> <b style="color:#2f855a;font-size:7.5px;">115%</b> (850점)<br>
-        · 신규점 <b>717,648</b> <b style="color:#2f855a;font-size:7.5px;">121%</b> (52점)
+        · 기존점 <b>728,798</b> <b style="color:#2f855a;font-size:7.5px;">115%</b> (850개)<br>
+        · 신규점 <b>717,648</b> <b style="color:#2f855a;font-size:7.5px;">121%</b> (52개)
       </div>
     </div>
     <div class="kpi-box" style="text-align:left;padding:8px;background:#fffaf0;border:1px solid #f6ad55;">
@@ -1884,7 +2630,7 @@
       <ul style="font-size:6.5px;color:#744210;margin-top:4px;padding-left:10px;line-height:1.35;">
         <li><b>당월 98% → 4월 105.4% 반등:</b> 정상화 구간 · YTD 116% 견조</li>
         <li><b>F1 YTD 122% · O3 135% 확대:</b> 정가 고효율 Zone 포트폴리오 고도화</li>
-        <li><b>F3 당월 98.5% (375개점) 리스크:</b> 중소 상권 전략 보강·조기경보 필요</li>
+        <li><b>F3 당월 98.5% (375개) 리스크:</b> 중소 상권 전략 보강·조기경보 필요</li>
         <li><b>F4 -21개 구조조정 효과:</b> YTD 108.8% · 할인율 +1.4%p는 재고 소진 압박</li>
         <li><b>매장 순감 909→902 (F4 주도):</b> H(-2)·O3(-4) 고효율 Zone 감소 주시</li>
       </ul>
@@ -2106,17 +2852,17 @@
 
           <div style="font-size:7.5px;font-weight:bold;color:#90cdf4;margin-bottom:2px;">① F1 — 전략 확대 대상</div>
           <div style="font-size:7px;line-height:1.5;margin-bottom:5px;">
-            당월 점당 <b style="color:#90cdf4;">940,854¥ (YoY 111.9%)</b> · 매장 47개(+3개, 107%) · 할인율 1.7%로 전 Zone 최저 — 정가 판매 비중 압도적. 현 47개점에서 추가 확대 최우선 고려
+            당월 점당 <b style="color:#90cdf4;">940,854¥ (YoY 111.9%)</b> · 매장 47개(+3개, 107%) · 할인율 1.7%로 전 Zone 최저 — 정가 판매 비중 압도적. 현 47개에서 추가 확대 최우선 고려
           </div>
 
           <div style="font-size:7.5px;font-weight:bold;color:#90cdf4;margin-bottom:2px;">② O3 · O1 — 아웃렛 양극화</div>
           <div style="font-size:7px;line-height:1.5;margin-bottom:5px;">
-            O3 점당 435,329¥ <b style="color:#90cdf4;">YoY 123.8%</b> 아웃렛 최고 성장 · 단 13개점(-4개) 소규모 · O1 점당 <b style="color:#90cdf4;">1,141,821¥</b> 아웃렛 내 최대 매출로 견조(104.1%) — O2(96.0%)만 부진. O3·O1 위주 확대, O2 운영 재검토
+            O3 점당 435,329¥ <b style="color:#90cdf4;">YoY 123.8%</b> 아웃렛 최고 성장 · 단 13개(-4개) 소규모 · O1 점당 <b style="color:#90cdf4;">1,141,821¥</b> 아웃렛 내 최대 매출로 견조(104.1%) — O2(96.0%)만 부진. O3·O1 위주 확대, O2 운영 재검토
           </div>
 
           <div style="font-size:7.5px;font-weight:bold;color:#fbb6ce;margin-bottom:2px;">③ F3 당월 98.6% — 최대 매장수 리스크</div>
           <div style="font-size:7px;line-height:1.5;margin-bottom:5px;">
-            375개점 최다 구성(+10개 증점) · 당월 점당 404,014¥로 당월 유일 역성장 — 중소 상권 경쟁 심화 우려. Q2 여름 MD 강화 및 점별 실적 조기경보 체계 구축 필요
+            375개 최다 구성(+10개 증점) · 당월 점당 404,014¥로 당월 유일 역성장 — 중소 상권 경쟁 심화 우려. Q2 여름 MD 강화 및 점별 실적 조기경보 체계 구축 필요
           </div>
 
           <div style="font-size:7.5px;font-weight:bold;color:#90cdf4;margin-bottom:2px;">④ F4 구조조정 효과 확인</div>
@@ -2126,7 +2872,7 @@
 
           <div style="font-size:7.5px;font-weight:bold;color:#fc8181;margin-bottom:2px;">⑤ H Zone 감점 주시</div>
           <div style="font-size:7px;line-height:1.5;">
-            9개점 중 △2개 감소(82%) · 점당 1,208,453¥ <b style="color:#90cdf4;">(YoY 108.2%)</b> 수치는 양호 — 허브 매장 기능상 최소 규모 유지 여부 모니터링 필요
+            9개 중 △2개 감소(82%) · 점당 1,208,453¥ <b style="color:#90cdf4;">(YoY 108.2%)</b> 수치는 양호 — 허브 매장 기능상 최소 규모 유지 여부 모니터링 필요
           </div>
         </div>
       </div>
@@ -2995,6 +3741,7 @@
 
 <script>
 (function () {
+  const monthSelect = document.getElementById('monthSelect');
   const brandSelect = document.getElementById('brandSelect');
   const mlbShared = document.getElementById('mlb-shared');
   const mlbOnly = document.getElementById('mlb-only');
@@ -3010,6 +3757,25 @@
     'KIDS': 'MLB KIDS',
     'DISCOVERY': 'DISCOVERY'
   };
+
+  const MONTH_LABELS = {
+    '2026.03': '2026년 3월'
+    // 추후 월 추가 시: '2026.04': '2026년 4월' 등
+  };
+
+  // 월별 컨텐츠 전환: 각 브랜드 컨테이너 내부에 data-month 속성이 있는 자식이 있으면
+  // 선택된 월에 해당하는 요소만 표시. data-month 속성이 없으면 모든 월에서 표시(기본 3월 기준 현재 컨텐츠).
+  function applyMonthFilter(month) {
+    const allContainers = [mlbShared, mlbOnly, kidsContainer, discoveryContainer];
+    allContainers.forEach(container => {
+      if (!container) return;
+      const monthTagged = container.querySelectorAll(':scope > [data-month]');
+      if (monthTagged.length === 0) return;
+      monthTagged.forEach(el => {
+        el.style.display = (el.dataset.month === month) ? '' : 'none';
+      });
+    });
+  }
 
   function replaceNumbers(rootEl) {
     const walker = document.createTreeWalker(rootEl, NodeFilter.SHOW_TEXT, null);
@@ -3068,6 +3834,14 @@
     brandSelect.addEventListener('change', function () {
       switchBrand(this.value);
     });
+  }
+
+  if (monthSelect) {
+    monthSelect.addEventListener('change', function () {
+      applyMonthFilter(this.value);
+    });
+    // 초기 진입 시 선택된 월 필터 적용
+    applyMonthFilter(monthSelect.value);
   }
 })();
 </script>
