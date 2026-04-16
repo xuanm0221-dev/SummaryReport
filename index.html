@@ -428,8 +428,8 @@
             <td><span class="badge-up">월별 지속 개선</span></td>
           </tr>
           <tr><td><b>신발 재고주수</b></td>
-            <td style="font-size:7px;">3월 46.2주 (YoY +7.6주) · 대리상 40.5주</td>
-            <td><span class="badge-warn">소폭 상승</span></td>
+            <td style="font-size:7px;">57주 → 46주 → 46주 (3월 46.2주, YoY +7.6주, 대리상 46.2주)</td>
+            <td><span class="badge-up">월별 개선 후 안정화</span></td>
           </tr>
           <tr><td><b>본사 기말재고</b></td>
             <td style="font-size:7px;">220M (130%) → 208M (108%) → 209M (109%)</td>
@@ -669,21 +669,21 @@
     </div>
 
     <!-- 카드 4: ACC 재고주수 요약 (KIDS) -->
-    <!-- 카드 4: ACC 재고주수 요약 (KIDS) -->
     <div style="border:1px solid #cbd5e0;border-radius:4px;padding:8px;background:#fff;">
       <div style="display:flex;justify-content:space-between;align-items:baseline;">
         <span style="font-size:8px;font-weight:bold;color:#4a5568;">📦 ACC 재고주수</span>
         <span style="font-size:6.5px;color:#dd6b20;font-weight:bold;">YoY +6.3주</span>
       </div>
       <div style="font-size:16px;font-weight:800;color:#1a365d;margin:3px 0;">47.5<span style="font-size:9px;color:#718096;">주</span></div>
-      <div style="font-size:6.5px;color:#718096;margin-bottom:3px;">1→2→3월: 58.6→49.3→47.5 · 대리상 기준 전체 40.4주</div>
+      <div style="font-size:6.5px;color:#2b6cb0;font-weight:600;margin-bottom:1px;">ACC전체 1→2→3월: 58.6주 → 49.3주 → 47.5주</div>
+      <div style="font-size:6.5px;color:#2b6cb0;font-weight:600;margin-bottom:3px;">신발 1→2→3월: 57주 → 46주 → 46주</div>
       <div style="display:flex;justify-content:space-between;align-items:center;font-size:6.5px;color:#718096;border-top:1px solid #e2e8f0;padding-top:3px;">
         <span>아이템별 (전체/YoY/대리상)</span>
         <button onclick="var t=document.getElementById('kids-acc-summary'),b=document.getElementById('kids-acc-summary-btn');if(t.style.display==='none'){t.style.display='table';b.textContent='▲ 접기';}else{t.style.display='none';b.textContent='▼ 펼치기';}" id="kids-acc-summary-btn" style="font-size:6.5px;padding:1px 5px;cursor:pointer;background:#edf2f7;border:1px solid #cbd5e0;border-radius:3px;">▼ 펼치기</button>
       </div>
       <table id="kids-acc-summary" style="display:none;font-size:6.5px;margin-top:3px;">
         <tr><th>아이템</th><th class="num">전체</th><th class="num">YoY</th><th class="num">대리상</th></tr>
-        <tr><td>신발</td><td class="num">46.2</td><td class="num" style="color:#c53030;">+7.6</td><td class="num">40.5</td></tr>
+        <tr><td>신발</td><td class="num">46.2</td><td class="num" style="color:#c53030;">+7.6</td><td class="num">46.2</td></tr>
         <tr><td>모자</td><td class="num">47.5</td><td class="num" style="color:#dd6b20;">+1.1</td><td class="num">45.8</td></tr>
         <tr><td>가방</td><td class="num">48.6</td><td class="num" style="color:#c53030;">+7.8</td><td class="num">30.1</td></tr>
         <tr><td>기타</td><td class="num">98.5</td><td class="num" style="color:#c53030;">+10.2</td><td class="num">108.1</td></tr>
@@ -2415,7 +2415,8 @@
         <span style="font-size:6.5px;color:#c53030;font-weight:bold;">YoY +10.7주</span>
       </div>
       <div style="font-size:16px;font-weight:800;color:#1a365d;margin:3px 0;">40.9<span style="font-size:9px;color:#718096;">주</span></div>
-      <div style="font-size:6.5px;color:#718096;margin-bottom:3px;">1→2→3월: 51.9→42.8→40.9</div>
+      <div style="font-size:6.5px;color:#2b6cb0;font-weight:600;margin-bottom:1px;">ACC전체 1→2→3월: 51.9주 → 42.8주 → 40.9주</div>
+      <div style="font-size:6.5px;color:#2b6cb0;font-weight:600;margin-bottom:3px;">신발 1→2→3월: 56.3주 → 45.7주 → 45.3주</div>
       <div style="display:flex;justify-content:space-between;align-items:center;font-size:6.5px;color:#718096;border-top:1px solid #e2e8f0;padding-top:3px;">
         <span>아이템별 (전체/YoY/대리상)</span>
         <button onclick="var t=document.getElementById('acc-summary-detail'),b=document.getElementById('acc-summary-btn');if(t.style.display==='none'){t.style.display='table';b.textContent='▲ 접기';}else{t.style.display='none';b.textContent='▼ 펼치기';}" id="acc-summary-btn" style="font-size:6.5px;padding:1px 5px;cursor:pointer;background:#edf2f7;border:1px solid #cbd5e0;border-radius:3px;">▼ 펼치기</button>
@@ -2438,11 +2439,12 @@
     <div style="font-size:7px;font-weight:bold;color:#276749;margin:2px 0 2px;border-bottom:1px solid #c6f6d5;padding-bottom:1px;">🟢 전체 재고 건전화 진행</div>
     <ul style="margin-bottom:4px;">
       <li><b>전체 ACC 재고주수 40.9주 (YoY +10.7주):</b> 1→2→3월 <b>51.9→42.8→40.9주</b> 지속 하락 — 월 단위 개선 뚜렷, 소진 속도 회복 구간</li>
+      <li><b>신발 45.3주 · 1→2→3월 <b>56.3→45.7→45.3주</b>:</b> 절대 수준 개선 뚜렷 — 2월 이후 안정화 구간 진입</li>
     </ul>
 
     <div style="font-size:7px;font-weight:bold;color:#975a16;margin:2px 0 2px;border-bottom:1px solid #fefcbf;padding-bottom:1px;">🟠 YoY 증가 주시 — 신발 최대 경계</div>
     <ul style="margin-bottom:4px;">
-      <li><b>신발 45.3주 (YoY <span style="color:#c53030;">+15.7주</span>, 대리상 32.5주):</b> 절대 수준은 건전 구간이나 YoY 증가 폭이 가장 큼 — 전년 기저 대비 소진 속도 둔화, 출고·리테일 모니터링 필요</li>
+      <li><b>신발 YoY <span style="color:#c53030;">+15.7주</span> (대리상 32.5주):</b> 3월 절대 수준(45.3)은 건전하나 YoY 증가 폭이 ACC 중 가장 큼 — 전년 기저 대비 소진 속도 둔화, 출고·리테일 모니터링 필요</li>
       <li><b>기타 48.5주 (YoY +4.1주, 대리상 42.9주):</b> ACC 중 절대치 최대 · 소량 카테고리이나 소진 속도 추적 지속</li>
       <li><b>가방 46.4주 (YoY +3.2주, 대리상 35.6주):</b> 평균 상회 · 리테일 YTD 90% 부진과 맞물린 추이 관찰</li>
     </ul>
